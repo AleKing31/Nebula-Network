@@ -9,8 +9,7 @@
 #include <neb/core/scene/Remote.hh>
 
 #include <neb/config.hh> // Nebula/config.hpp.in
-#include <neb/gfx/glsl/program.hh>
-
+#include <neb/gfx/glsl/program.hpp>
 
 //#include <neb/core/actor/base.hpp>
 #include <neb/core/actor/Util/Parent.hh>

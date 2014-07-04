@@ -11,8 +11,7 @@
 #include <neb/core/scene/Util/Types.hh>
 
 #include <neb/util/config.hh> // Nebula/config.hpp.in
-#include <neb/gfx/glsl/program.hh>
-
+#include <neb/gfx/glsl/program.hpp>
 
 //#include <neb/core/actor/base.hpp>
 #include <neb/core/actor/Util/Parent.hh>
