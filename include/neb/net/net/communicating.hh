@@ -3,7 +3,7 @@
 
 #include <neb/util/decl.hpp>
 
-#include <Galaxy-Network/communicating.hpp>
+#include <gal/net/communicating.hpp>
 
 namespace neb {
 	namespace Network {

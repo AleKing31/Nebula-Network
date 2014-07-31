@@ -1,6 +1,8 @@
-#include <Galaxy-Network/message.hpp>
 
-#include <Galaxy-Log/log.hpp>
+
+#include <gal/net/message.hpp>
+
+#include <gal/log/log.hpp>
 
 //#include <neb/config.hh>
 //#include <neb/app/Base.hh>

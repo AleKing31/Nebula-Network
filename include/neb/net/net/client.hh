@@ -1,7 +1,7 @@
 #ifndef __NEBULA_NETWORK_CLIENT_H__
 #define __NEBULA_NETWORK_CLIENT_H__
 
-#include <Galaxy-Network/client.hpp>
+#include <gal/net/client.hpp>
 
 #include <neb/net/communicating.hh>
 

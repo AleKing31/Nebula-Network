@@ -1,7 +1,7 @@
 #ifndef NEBULA_NETWORK_SERVER_HPP
 #define NEBULA_NETWORK_SERVER_HPP
 
-#include <Galaxy-Network/server.hpp>
+#include <gal/net/server.hpp>
 
 #include <neb/net/communicating.hh>
 

@@ -10,7 +10,7 @@
 */
 //#include <math/free.hpp>
 
-#include <Galaxy-Network/message.hpp>
+#include <gal/net/message.hpp>
 
 #include <neb/core/actor/base.hpp>
 

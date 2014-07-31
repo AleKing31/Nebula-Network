@@ -1,6 +1,6 @@
 #include <assert.h>
 
-#include <Galaxy-Network/server.hpp>
+#include <gal/net/server.hpp>
 
 #include <neb/util/typedef.hpp>
 #include <neb/app/Base.hh>

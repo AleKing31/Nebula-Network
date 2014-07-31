@@ -4,7 +4,7 @@
 #include <boost/archive/polymorphic_iarchive.hpp>
 #include <boost/archive/polymorphic_oarchive.hpp>
 
-#include <Galaxy-Network/message.hpp>
+#include <gal/net/message.hpp>
 
 #include <neb/util/shared.hpp>
 
