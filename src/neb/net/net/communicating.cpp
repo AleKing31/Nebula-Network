@@ -17,10 +17,10 @@ neb::Network::Communicating::Communicating(boost::asio::io_service& io_service, 
 neb::Network::Communicating::Communicating(boost::asio::io_service& io_service):
 	gal::net::communicating(io_service)
 {}
-void		neb::Network::Communicating::process(sp::shared_ptr<gal::net::imessage> buffer) {
+void		neb::Network::Communicating::process(std::shared_ptr<gal::net::imessage> buffer) {
 	if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "neb::Network", debug) << __PRETTY_FUNCTION__;
 
-	neb::std::wrapper/*<neb::message::IBase>*/	wrapper;
+	neb::stl::wrapper/*<neb::message::IBase>*/	wrapper;
 
 	buffer->ar_ >> wrapper;
 }

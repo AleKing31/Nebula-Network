@@ -4,7 +4,7 @@
 #include <PhysX/core/actor/util/parent.hpp>
 #include <PhysX/core/actor/rigidactor/local.hpp>
 
-phx::core::actor::rigidactor::local::local(sp::shared_ptr<phx::core::actor::util::parent> parent):
+phx::core::actor::rigidactor::local::local(std::shared_ptr<phx::core::actor::util::parent> parent):
 	neb::core::actor::base(parent),
 	neb::core::actor::actor::base(parent),
 	neb::core::actor::rigidactor::base(parent),
@@ -33,7 +33,7 @@ void		phx::core::actor::rigidactor::local::init() {
 	phx::core::actor::rigidactor::base::release();
 
 }*/
-void		phx::core::actor::rigidactor::local::step(gal::std::timestep const & ts) {
+void		phx::core::actor::rigidactor::local::step(gal::etc::timestep const & ts) {
 	if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "phx core actor", debug) << __PRETTY_FUNCTION__;
 	
 	neb::core::actor::rigidactor::base::step(ts);

@@ -13,7 +13,7 @@ namespace neb {
 		{
 			public:
 				Client(boost::asio::io_service& io_service, ip::tcp::resolver::iterator endpoint_iterator);
-				void		process(sp::shared_ptr< gal::net::imessage > message);
+				void		process(std::shared_ptr< gal::net::imessage > message);
 
 		};
 	}

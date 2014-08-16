@@ -3,7 +3,7 @@
 
 #include <neb/message/Actor/Create.hh>
 
-void		neb::message::actor::Create::load(sp::shared_ptr<neb::core::actor::base> actor) {
+void		neb::message::actor::Create::load(std::shared_ptr<neb::core::actor::base> actor) {
 	assert(actor);
 
 	parent_i_ = actor->get_parent()->i_;

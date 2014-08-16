@@ -18,7 +18,7 @@ namespace phx { namespace core { namespace actor { namespace rigiddynamic {
 	{
 
 		public:
-			local(sp::shared_ptr<phx::core::actor::util::parent>);
+			local(std::shared_ptr<phx::core::actor::util::parent>);
 
 			virtual void					init();
 
@@ -27,7 +27,7 @@ namespace phx { namespace core { namespace actor { namespace rigiddynamic {
 			//void						releaseUp();
 		public:
 
-			virtual void					step(gal::std::timestep const & ts);
+			virtual void					step(gal::etc::timestep const & ts);
 
 
 			virtual void					create_physics();

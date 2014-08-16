@@ -20,11 +20,11 @@ namespace phx { namespace core { namespace actor { namespace actor {
 	{
 
 		public:
-			remote(sp::shared_ptr<phx::core::actor::util::parent> parent);
+			remote(std::shared_ptr<phx::core::actor::util::parent> parent);
 
 			virtual void					init();
 			virtual void					release() = 0;
-			virtual void					step(gal::std::timestep const & ts);
+			virtual void					step(gal::etc::timestep const & ts);
 
 
 			//virtual void					create_physics() = 0;

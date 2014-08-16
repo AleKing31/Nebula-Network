@@ -16,7 +16,7 @@ namespace phx { namespace message { namespace actor { namespace control {
 		class create:
 			virtual public neb::message::actor::base
 		{
-			gal::std::wrapper<phx::core::actor::control::rigidbody::base>		control_;
+			gal::stl::wrapper<phx::core::actor::control::rigidbody::base>		control_;
 		};
 		/** @brief %create. */
 		class icreate:
@@ -45,7 +45,7 @@ namespace phx { namespace message { namespace actor { namespace control {
 			public:
 				virtual ~update() = 0;
 			public:
-				gal::std::wrapper<phx::core::actor::control::rigidbody::base>		control_;
+				gal::stl::wrapper<phx::core::actor::control::rigidbody::base>		control_;
 		};
 		/** @brief %update. */
 		class iupdate:

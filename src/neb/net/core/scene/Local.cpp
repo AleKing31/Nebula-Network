@@ -14,7 +14,7 @@
 #include <PhysX/core/actor/rigiddynamic/local.hpp>
 #include <PhysX/core/actor/rigidstatic/local.hpp>
 
-phx::core::scene::local::local(sp::shared_ptr<neb::core::scene::util::parent> parent):
+phx::core::scene::local::local(std::shared_ptr<neb::core::scene::util::parent> parent):
 	neb::core::scene::base(parent),
 	neb::core::scene::local(parent),
 	phx::core::scene::base(parent)
@@ -33,7 +33,7 @@ void			phx::core::scene::local::release() {
 	neb::core::scene::local::release();
 	phx::core::scene::base::release();
 }
-void			phx::core::scene::local::step(gal::std::timestep const & ts) {
+void			phx::core::scene::local::step(gal::etc::timestep const & ts) {
 
 }
 

@@ -13,11 +13,11 @@ neb::Network::Server::Server(
 	gal::net::server<neb::Network::Communicating>(io_service, endpoint)
 {
 }
-void		neb::Network::Server::accept(sp::shared_ptr<neb::Network::Communicating> client) {
+void		neb::Network::Server::accept(std::shared_ptr<neb::Network::Communicating> client) {
 	
 
 	// exp
-	//sp::shared_ptr<neb::core::actor::Control::RigidBody::raw> control_raw(new neb::control::rigid_body::raw);
+	//std::shared_ptr<neb::core::actor::Control::RigidBody::raw> control_raw(new neb::control::rigid_body::raw);
 
 	/** @todo move all this to Box */
 
@@ -25,7 +25,7 @@ void		neb::Network::Server::accept(sp::shared_ptr<neb::Network::Communicating> c
 	   auto scene = app->get_scene(0);
 	   assert(scene);
 
-	   sp::shared_ptr<glutpp::actor::desc> ad = scene->actors_deferred_[(char*)"player0"];
+	   std::shared_ptr<glutpp::actor::desc> ad = scene->actors_deferred_[(char*)"player0"];
 	   assert(ad);
 
 	   auto actor = app->scenes_[0]->create_actor_local(ad);
@@ -42,7 +42,7 @@ void		neb::Network::Server::accept(sp::shared_ptr<neb::Network::Communicating> c
 	neb::network::control::rigid_body::create control_create;
 	control_create.get_addr()->load_this(rigidbody);
 
-	sp::shared_ptr<gal::net::message> msg(new gal::net::message);
+	std::shared_ptr<gal::net::message> msg(new gal::net::message);
 
 	msg->write(glutpp::network::type::CONTROL_CREATE);
 	control_create.write(msg);
@@ -52,7 +52,7 @@ void		neb::Network::Server::accept(sp::shared_ptr<neb::Network::Communicating> c
 	// exp
 	 */
 }
-void		neb::Network::Server::write(sp::shared_ptr< gal::net::omessage > omessage) {
+void		neb::Network::Server::write(std::shared_ptr< gal::net::omessage > omessage) {
 	/** @todo impl */
 }
 

@@ -31,11 +31,11 @@ namespace neb {
 			{
 				public:
 					/** @brief Save %Actor. */
-					OUpdate&		operator<<(sp::shared_ptr<neb::core::actor::base> actor);
+					OUpdate&		operator<<(std::shared_ptr<neb::core::actor::base> actor);
 
 					virtual void		serialize(boost::archive::polymorphic_oarchive& ar, unsigned int const & version);
 
-					::std::vector< sp::shared_ptr<neb::core::actor::base> >	actors_;
+					::std::vector< std::shared_ptr<neb::core::actor::base> >	actors_;
 			};
 			class IUpdate:
 				virtual public neb::message::actor::IBase,

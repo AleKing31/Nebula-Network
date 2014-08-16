@@ -13,7 +13,7 @@ void			phx::message::actor::control::rigidbody::iupdate::serialize(
 	ar >> control_;
 	
 
-	auto actor = std::dynamic_pointer_cast<phx::core::actor::base>(gal::std::shared::registry_.get(index_));
+	auto actor = std::dynamic_pointer_cast<phx::core::actor::base>(gal::itf::shared::registry_.get(index_));
 	assert(actor);
 
 	auto rigidbody = actor->isPxActorRigidBodyBase();

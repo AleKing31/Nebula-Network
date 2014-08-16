@@ -16,10 +16,10 @@ namespace neb {
 				Server(
 						boost::asio::io_service& io_service,
 						ip::tcp::endpoint const & endpoint);
-				void			accept(sp::shared_ptr<neb::Network::Communicating>);
-				void			write(sp::shared_ptr<gal::net::omessage> omessage);
+				void			accept(std::shared_ptr<neb::Network::Communicating>);
+				void			write(std::shared_ptr<gal::net::omessage> omessage);
 			private:
-				::std::vector< sp::shared_ptr< neb::Network::Communicating > >	clients_;
+				::std::vector< std::shared_ptr< neb::Network::Communicating > >	clients_;
 
 		};
 	}

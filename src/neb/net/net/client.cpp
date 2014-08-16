@@ -25,7 +25,7 @@ neb::Network::Client::Client(boost::asio::io_service& io_service, ip::tcp::resol
 {
 
 }
-void		neb::Network::Client::process(sp::shared_ptr<gal::net::imessage> message) {
+void		neb::Network::Client::process(std::shared_ptr<gal::net::imessage> message) {
 
 	//assert(msg->body_length() == sizeof(neb::packet::packet));
 
@@ -47,22 +47,22 @@ void		neb::Network::Client::process(sp::shared_ptr<gal::net::imessage> message) 
 	
 	//
 	
-	sp::shared_ptr<glutpp::window::window> window;
+	std::shared_ptr<glutpp::window::window> window;
 	
-	sp::shared_ptr<neb::core::actor::base>			actor;
-	sp::shared_ptr<neb::core::actor::rigidbody::RigidBody>	rigidbody;
+	std::shared_ptr<neb::core::actor::base>			actor;
+	std::shared_ptr<neb::core::actor::rigidbody::RigidBody>	rigidbody;
 	
-	sp::shared_ptr<glutpp::scene::desc> sd;
+	std::shared_ptr<glutpp::scene::desc> sd;
 	
 	
-	sp::shared_ptr<glutpp::scene::addr> scene_addr;
+	std::shared_ptr<glutpp::scene::addr> scene_addr;
 	
-	sp::shared_ptr<glutpp::actor::addr> actor_addr;
-	sp::shared_ptr<glutpp::actor::desc> actor_desc;
+	std::shared_ptr<glutpp::actor::addr> actor_addr;
+	std::shared_ptr<glutpp::actor::desc> actor_desc;
 	
-	sp::shared_ptr<neb::control::rigid_body::raw>	control_raw;
+	std::shared_ptr<neb::control::rigid_body::raw>	control_raw;
 	
-	sp::shared_ptr<glutpp::network::actor::vec_addr_raw> vec;
+	std::shared_ptr<glutpp::network::actor::vec_addr_raw> vec;
 
 	int window_name = 0;
 	
@@ -116,8 +116,8 @@ void		neb::Network::Client::process(sp::shared_ptr<gal::net::imessage> message) 
 			for(auto it = vec->vec_.begin(); it != vec->vec_.end(); ++it)
 			{
 				auto t = *it;
-				sp::shared_ptr<glutpp::actor::addr> addr = std::get<1>(t);
-				sp::shared_ptr<glutpp::actor::raw> raw = std::get<0>(t);
+				std::shared_ptr<glutpp::actor::addr> addr = std::get<1>(t);
+				std::shared_ptr<glutpp::actor::raw> raw = std::get<0>(t);
 				
 				auto a = app->get_actor(addr);
 				if(a)

@@ -8,7 +8,7 @@
 #include <ft2build.h>
 #include FT_FREETYPE_H
 
-#include <gal/std/shared.hpp>
+#include <gal/itf/shared.hpp>
 
 #include <gal/net/decl.hpp>
 
@@ -28,14 +28,14 @@ namespace neb {
 				void					reset_server(ip::tcp::endpoint const & endpoint);
 				void					reset_client(ip::tcp::resolver::iterator endpoint_iterator);
 
-				void					sendServer(sp::shared_ptr< gal::net::omessage >);
-				void					sendServer(sp::shared_ptr< neb::message::OBase > message);
-				void					sendClient(sp::shared_ptr< gal::net::omessage >);
-				void					sendClient(sp::shared_ptr< neb::message::OBase > message);
+				void					sendServer(std::shared_ptr< gal::net::omessage >);
+				void					sendServer(std::shared_ptr< neb::message::OBase > message);
+				void					sendClient(std::shared_ptr< gal::net::omessage >);
+				void					sendClient(std::shared_ptr< neb::message::OBase > message);
 
 
-				sp::shared_ptr<neb::Network::Server>				server_;
-				sp::shared_ptr<neb::Network::Client>				client_;
+				std::shared_ptr<neb::Network::Server>				server_;
+				std::shared_ptr<neb::Network::Client>				client_;
 
 		};
 

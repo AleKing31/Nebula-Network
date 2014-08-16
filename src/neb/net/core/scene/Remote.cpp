@@ -9,12 +9,12 @@
 #include <PhysX/core/scene/remote.hpp>
 #include <PhysX/core/actor/rigidstatic/remote.hpp>
 
-void		phx::core::scene::remote::step(gal::std::timestep const & ts) {
+void		phx::core::scene::remote::step(gal::etc::timestep const & ts) {
 
 
 
 }
-void		phx::core::scene::remote::fire(sp::shared_ptr<neb::core::actor::base> actor) {
+void		phx::core::scene::remote::fire(std::shared_ptr<neb::core::actor::base> actor) {
 	
 	auto message(sp::make_shared< phx::message::actor::event::OFire >());
 	
@@ -23,7 +23,7 @@ void		phx::core::scene::remote::fire(sp::shared_ptr<neb::core::actor::base> acto
 
 	neb::app::base::global()->sendClient(message);
 }
-sp::weak_ptr<neb::core::actor::rigidstatic::base>	phx::core::scene::remote::createActorRigidStaticUninitialized() {
+std::weak_ptr<neb::core::actor::rigidstatic::base>	phx::core::scene::remote::createActorRigidStaticUninitialized() {
 	
 	auto actor(sp::make_shared<phx::core::actor::rigidstatic::remote>(isPxSceneRemote()));
 

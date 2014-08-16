@@ -1,7 +1,7 @@
 #include <PhysX/core/actor/rigidbody/local.hpp>
 
 
-phx::core::actor::rigidbody::local::local(sp::shared_ptr<phx::core::actor::util::parent> parent):
+phx::core::actor::rigidbody::local::local(std::shared_ptr<phx::core::actor::util::parent> parent):
 	neb::core::actor::base(parent),
 	neb::core::actor::actor::base(parent),
 	neb::core::actor::rigidactor::base(parent),
@@ -26,7 +26,7 @@ void		phx::core::actor::rigidbody::local::init() {
 	neb::core::actor::rigidbody::base::release();
 	neb::core::actor::rigidactor::local::release();
 }*/
-void		phx::core::actor::rigidbody::local::step(gal::std::timestep const & ts) {
+void		phx::core::actor::rigidbody::local::step(gal::etc::timestep const & ts) {
 	neb::core::actor::rigidbody::base::step(ts);
 	neb::core::actor::rigidactor::local::step(ts);
 }

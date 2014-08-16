@@ -19,11 +19,11 @@ namespace phx { namespace core { namespace actor { namespace rigidstatic {
 		virtual public phx::core::actor::rigidstatic::base
 	{
 		public:
-			local(sp::shared_ptr<phx::core::actor::util::parent>);
+			local(std::shared_ptr<phx::core::actor::util::parent>);
 
 			virtual void					init();
 			virtual void					release();
-			virtual void					step(gal::std::timestep const & ts);
+			virtual void					step(gal::etc::timestep const & ts);
 
 
 

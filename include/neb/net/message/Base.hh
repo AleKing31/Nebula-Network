@@ -17,7 +17,7 @@ namespace neb {
 		 * 
 		 */
 		class base:
-			virtual public neb::std::shared
+			virtual public neb::itf::shared
 		{
 			protected:
 				base();
@@ -32,7 +32,7 @@ namespace neb {
 						boost::archive::polymorphic_oarchive & ar,
 						unsigned int const & version) = 0;			
 			public:
-				sp::shared_ptr<gal::net::omessage>	msg_;
+				std::shared_ptr<gal::net::omessage>	msg_;
 		};
 		class IBase:
 			virtual public neb::message::base
@@ -41,7 +41,7 @@ namespace neb {
 				IBase();
 				virtual void			serialize(boost::archive::polymorphic_iarchive & ar, unsigned int const & version) = 0;
 			public:
-				sp::shared_ptr<gal::net::omessage>	msg_;
+				std::shared_ptr<gal::net::omessage>	msg_;
 		};
 	}
 }

@@ -14,7 +14,7 @@ namespace neb {
 		namespace actor {
 			struct Create {
 				public:
-					void				load(sp::shared_ptr<neb::core::actor::base> actor);
+					void				load(std::shared_ptr<neb::core::actor::base> actor);
 
 					template<class Archive> void	serialize(Archive & ar, unsigned int const & version) {
 						ar & parent_i_;
@@ -26,16 +26,16 @@ namespace neb {
 					 *
 					 * index of new object's parent
 					 */
-					gal::std::index_type				parent_i_;
+					gal::itf::index_type				parent_i_;
 					/** @brief index
 					 *
 					 * index of new object
 					 */
-					gal::std::index_type				i_;
+					gal::itf::index_type				i_;
 					/** @brief Wrapper.
 					 * wrapper to create the actor object
 					 */
-					gal::std::wrapper<neb::core::actor::base>		wrapper_;
+					gal::stl::wrapper<neb::core::actor::base>		wrapper_;
 			};
 		}
 	}

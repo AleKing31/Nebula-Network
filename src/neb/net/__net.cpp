@@ -12,7 +12,7 @@ void neb::app::__net::reset_client(ip::tcp::resolver::iterator endpoint_iterator
 	//NEBULA_DEBUG_0_FUNCTION;
 	client_.reset(new neb::Network::Client(ios_, endpoint_iterator));
 }
-void		neb::app::__net::sendServer(sp::shared_ptr< gal::net::omessage > msg)  {
+void		neb::app::__net::sendServer(std::shared_ptr< gal::net::omessage > msg)  {
 	//NEBULA_DEBUG_1_FUNCTION;
 
 	if(server_) {
@@ -21,7 +21,7 @@ void		neb::app::__net::sendServer(sp::shared_ptr< gal::net::omessage > msg)  {
 		if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "neb", debug) << "no server";
 	}
 }
-void		neb::app::__net::sendClient(sp::shared_ptr< gal::net::omessage > msg)  {
+void		neb::app::__net::sendClient(std::shared_ptr< gal::net::omessage > msg)  {
 	//NEBULA_DEBUG_1_FUNCTION;
 
 	if(client_) {
@@ -30,11 +30,11 @@ void		neb::app::__net::sendClient(sp::shared_ptr< gal::net::omessage > msg)  {
 		if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "neb", debug) << "no client";
 	}
 }
-void		neb::app::__net::sendClient(sp::shared_ptr< neb::message::OBase > message) {
+void		neb::app::__net::sendClient(std::shared_ptr< neb::message::OBase > message) {
 	assert(message);
 	
 	/** @todo wtf */
-	//neb::std::wrapper wrap(message);
+	//neb::stl::wrapper wrap(message);
 
 	auto buffer = sp::make_shared<gal::net::omessage>();
 
@@ -43,11 +43,11 @@ void		neb::app::__net::sendClient(sp::shared_ptr< neb::message::OBase > message)
 
 	sendClient(buffer);
 }
-void		neb::app::__net::sendServer(sp::shared_ptr< neb::message::OBase > message) {
+void		neb::app::__net::sendServer(std::shared_ptr< neb::message::OBase > message) {
 	assert(message);
 
 	/** @todo wtf */
-	//neb::std::wrapper wrapper(message);
+	//neb::stl::wrapper wrapper(message);
 
 	auto buffer = sp::make_shared<gal::net::omessage>();
 

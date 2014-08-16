@@ -14,11 +14,11 @@ namespace phx { namespace core { namespace actor {
 		virtual public phx::core::actor::base
 	{
 		public:
-			local(sp::shared_ptr<phx::core::actor::util::parent> parent);
+			local(std::shared_ptr<phx::core::actor::util::parent> parent);
 
 			virtual void		init();
 			virtual void		release() = 0;
-			virtual void		step(gal::std::timestep const & ts);
+			virtual void		step(gal::etc::timestep const & ts);
 
 
 

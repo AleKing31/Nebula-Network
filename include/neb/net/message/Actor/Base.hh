@@ -15,7 +15,7 @@ namespace neb {
 					 *
 					 * index of actor
 					 */
-					gal::std::index_type			index_;
+					gal::itf::index_type			index_;
 			};
 			class IBase:
 				virtual public neb::message::IBase,

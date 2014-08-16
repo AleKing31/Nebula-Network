@@ -10,7 +10,7 @@
 #include <PhysX/core/actor/rigidstatic/remote.hpp>
 #include <PhysX/core/scene/base.hpp>
 
-phx::core::actor::rigidstatic::remote::remote(sp::shared_ptr<phx::core::actor::util::parent> parent):
+phx::core::actor::rigidstatic::remote::remote(std::shared_ptr<phx::core::actor::util::parent> parent):
 	neb::core::actor::base(parent),
 	neb::core::actor::actor::base(parent),
 	neb::core::actor::rigidactor::base(parent),
@@ -50,7 +50,7 @@ void			phx::core::actor::rigidstatic::remote::release() {
 	//phx::core::actor::rigidstatic::remote::releaseUp();
 
 }
-void			phx::core::actor::rigidstatic::remote::step(gal::std::timestep const & ts) {
+void			phx::core::actor::rigidstatic::remote::step(gal::etc::timestep const & ts) {
 	if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "phx core actor", debug) << __PRETTY_FUNCTION__;
 
 	neb::core::actor::rigidstatic::remote::step(ts);

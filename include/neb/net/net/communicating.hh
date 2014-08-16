@@ -13,7 +13,7 @@ namespace neb {
 			public:
 				Communicating(boost::asio::io_service& io_service, ip::tcp::socket&& socket);
 				Communicating(boost::asio::io_service& io_service);
-				void			process(sp::shared_ptr< gal::net::imessage >);
+				void			process(std::shared_ptr< gal::net::imessage >);
 		};
 	}
 }
