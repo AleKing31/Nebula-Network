@@ -16,7 +16,7 @@
 //#include <neb/core/actor/base.hpp>
 #include <neb/core/actor/Util/Parent.hh>
 
-#include <neb/gfx/Camera/View/Base.hh>
+#include <neb/gfx/camera/view/Base.hh>
 
 //#include <glutpp/shader.h>
 
