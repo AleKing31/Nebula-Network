@@ -5,16 +5,16 @@
 #include <PhysX/core/actor/rigiddynamic/local.hpp>
 
 phx::core::actor::rigiddynamic::local::local(std::shared_ptr<phx::core::actor::util::parent> parent):
-	neb::core::actor::base(parent),
-	neb::core::actor::actor::base(parent),
-	neb::core::actor::rigidactor::base(parent),
-	neb::core::actor::local(parent),
-	neb::core::actor::actor::local(parent),
-	neb::core::actor::rigidactor::local(parent),
-	neb::core::actor::rigidbody::base(parent),
-	neb::core::actor::rigidbody::local(parent),
-	neb::core::actor::rigiddynamic::base(parent),
-	neb::core::actor::rigiddynamic::local(parent),
+	neb::fnd::actor::base(parent),
+	neb::fnd::actor::actor::base(parent),
+	neb::fnd::actor::rigidactor::base(parent),
+	neb::fnd::actor::local(parent),
+	neb::fnd::actor::actor::local(parent),
+	neb::fnd::actor::rigidactor::local(parent),
+	neb::fnd::actor::rigidbody::base(parent),
+	neb::fnd::actor::rigidbody::local(parent),
+	neb::fnd::actor::rigiddynamic::base(parent),
+	neb::fnd::actor::rigiddynamic::local(parent),
 	phx::core::actor::base(parent),
 	phx::core::actor::local(parent),
 	phx::core::actor::actor::base(parent),
@@ -31,7 +31,7 @@ phx::core::actor::rigiddynamic::local::local(std::shared_ptr<phx::core::actor::u
 void				phx::core::actor::rigiddynamic::local::init() {
 	if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "phx core actor", debug) << __PRETTY_FUNCTION__;
 
-	neb::core::actor::rigiddynamic::local::init();
+	neb::fnd::actor::rigiddynamic::local::init();
 	phx::core::actor::rigidbody::local::init();
 	phx::core::actor::rigiddynamic::base::init();
 }
@@ -45,10 +45,10 @@ void				phx::core::actor::rigiddynamic::local::release() {
 
 	boost::lock_guard<boost::recursive_mutex> lk(mutex_);
 
-	//neb::core::actor::rigiddynamic::base::releaseUp();
-	neb::core::actor::base::releaseUp();
+	//neb::fnd::actor::rigiddynamic::base::releaseUp();
+	neb::fnd::actor::base::releaseUp();
 
-	//neb::core::actor::rigiddynamic::local::releaseUp();
+	//neb::fnd::actor::rigiddynamic::local::releaseUp();
 
 	//phx::core::actor::rigiddynamic::base::releaseUp();
 	phx::core::actor::actor::base::releaseUp();
@@ -56,7 +56,7 @@ void				phx::core::actor::rigiddynamic::local::release() {
 	//phx::core::actor::rigiddynamic::local::releaseUp();
 }
 void				phx::core::actor::rigiddynamic::local::step(gal::etc::timestep const & ts) {
-	neb::core::actor::rigiddynamic::local::step(ts);
+	neb::fnd::actor::rigiddynamic::local::step(ts);
 	phx::core::actor::rigidbody::local::step(ts);
 	phx::core::actor::rigiddynamic::base::step(ts);
 }
@@ -77,10 +77,10 @@ void				phx::core::actor::rigiddynamic::local::init_physics() {
 
 	phx::core::actor::rigiddynamic::base::init_physics();
 }
-void				phx::core::actor::rigiddynamic::local::setPose(neb::core::pose const & pose) {
+void				phx::core::actor::rigiddynamic::local::setPose(neb::fnd::pose const & pose) {
 	if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "phx core actor", debug) << __PRETTY_FUNCTION__;
 
-	neb::core::actor::rigiddynamic::local::setPose(pose);
+	neb::fnd::actor::rigiddynamic::local::setPose(pose);
 	phx::core::actor::rigidbody::local::setPose(pose);
 	phx::core::actor::rigiddynamic::base::setPose(pose);
 

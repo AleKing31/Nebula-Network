@@ -14,9 +14,9 @@
 #include <PhysX/core/actor/rigiddynamic/local.hpp>
 #include <PhysX/core/actor/rigidstatic/local.hpp>
 
-phx::core::scene::local::local(std::shared_ptr<neb::core::scene::util::parent> parent):
-	neb::core::scene::base(parent),
-	neb::core::scene::local(parent),
+phx::core::scene::local::local(std::shared_ptr<neb::fnd::scene::util::parent> parent):
+	neb::fnd::scene::base(parent),
+	neb::fnd::scene::local(parent),
 	phx::core::scene::base(parent)
 {
 	if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "phx core scene", debug) << __PRETTY_FUNCTION__;
@@ -24,13 +24,13 @@ phx::core::scene::local::local(std::shared_ptr<neb::core::scene::util::parent> p
 void			phx::core::scene::local::init() {
 	if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "phx core scene", debug) << __PRETTY_FUNCTION__;
 
-	neb::core::scene::local::init();
+	neb::fnd::scene::local::init();
 	phx::core::scene::base::init();
 }
 void			phx::core::scene::local::release() {
 	if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "phx core scene", debug) << __PRETTY_FUNCTION__;
 
-	neb::core::scene::local::release();
+	neb::fnd::scene::local::release();
 	phx::core::scene::base::release();
 }
 void			phx::core::scene::local::step(gal::etc::timestep const & ts) {

@@ -30,7 +30,7 @@ namespace phx { namespace core { namespace scene {
 		virtual public phx::core::scene::base
 	{
 		public:
-			local(std::shared_ptr<neb::core::scene::util::parent> parent);
+			local(std::shared_ptr<neb::fnd::scene::util::parent> parent);
 			virtual void			init();
 			virtual void			release();
 			virtual void			step(::gal::etc::timestep const & ts);
@@ -47,7 +47,7 @@ namespace phx { namespace core { namespace scene {
 			 *
 			 * @warning return actor is not initialized
 			 */
-			std::weak_ptr<neb::core::actor::rigidstatic::base>	createActorRigidStaticUninitialized();
+			std::weak_ptr<neb::fnd::actor::rigidstatic::base>	createActorRigidStaticUninitialized();
 			/** @} */	
 	
 	};

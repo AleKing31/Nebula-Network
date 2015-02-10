@@ -14,7 +14,7 @@ namespace phx { namespace core { namespace actor { namespace rigidbody {
 
 
 	class local:
-		virtual public neb::core::actor::rigidbody::local,
+		virtual public neb::fnd::actor::rigidbody::local,
 		virtual public phx::core::actor::rigidactor::local,
 		virtual public phx::core::actor::rigidbody::base
 	{

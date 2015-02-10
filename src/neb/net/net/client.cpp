@@ -49,8 +49,8 @@ void		neb::Network::Client::process(std::shared_ptr<gal::net::imessage> message)
 	
 	std::shared_ptr<glutpp::window::window> window;
 	
-	std::shared_ptr<neb::core::actor::base>			actor;
-	std::shared_ptr<neb::core::actor::rigidbody::RigidBody>	rigidbody;
+	std::shared_ptr<neb::fnd::actor::base>			actor;
+	std::shared_ptr<neb::fnd::actor::rigidbody::RigidBody>	rigidbody;
 	
 	std::shared_ptr<glutpp::scene::desc> sd;
 	

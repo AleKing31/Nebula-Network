@@ -34,7 +34,7 @@ namespace phx { namespace core { namespace actor { namespace rigiddynamic {
 			virtual void					init_physics();
 
 			virtual void					add_force(real);
-			virtual void					setPose(neb::core::pose const & pose);
+			virtual void					setPose(neb::fnd::pose const & pose);
 
 
 			/** @brief projectile

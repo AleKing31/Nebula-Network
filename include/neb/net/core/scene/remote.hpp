@@ -25,12 +25,12 @@
 namespace phx { namespace core { namespace scene {
 
 	class remote:
-		virtual public neb::core::scene::remote,
+		virtual public neb::fnd::scene::remote,
 		virtual public ::phx::core::scene::base
 	{
 		void				step(gal::etc::timestep const & ts);
 		
-		virtual void			fire(std::shared_ptr<neb::core::actor::base> actor);
+		virtual void			fire(std::shared_ptr<neb::fnd::actor::base> actor);
 
 		/** @name convenience functions
 		 * @{
@@ -41,7 +41,7 @@ namespace phx { namespace core { namespace scene {
 		 *
 		 * @warning return actor is not initialized
 		 */
-		std::weak_ptr<neb::core::actor::rigidstatic::base>	createActorRigidStaticUninitialized();
+		std::weak_ptr<neb::fnd::actor::rigidstatic::base>	createActorRigidStaticUninitialized();
 		/** @} */	
 
 	};

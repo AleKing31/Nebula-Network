@@ -5,8 +5,8 @@
 /*
 void		phx::core::actor::rigidbody::remote::step(gal::etc::timestep const & ts) {
 	
-	neb::core::actor::rigidactor::remote::step(ts);
-	neb::core::actor::rigidbody::base::step(ts);
+	neb::fnd::actor::rigidactor::remote::step(ts);
+	neb::fnd::actor::rigidbody::base::step(ts);
 
 	auto app = neb::app::base::global();
 	

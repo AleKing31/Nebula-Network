@@ -11,14 +11,14 @@
 #include <PhysX/core/scene/base.hpp>
 
 phx::core::actor::rigidstatic::local::local(std::shared_ptr<phx::core::actor::util::parent> parent):
-	neb::core::actor::base(parent),
-	neb::core::actor::actor::base(parent),
-	neb::core::actor::rigidactor::base(parent),
-	neb::core::actor::local(parent),
-	neb::core::actor::actor::local(parent),
-	neb::core::actor::rigidactor::local(parent),
-	neb::core::actor::rigidstatic::base(parent),
-	neb::core::actor::rigidstatic::local(parent),
+	neb::fnd::actor::base(parent),
+	neb::fnd::actor::actor::base(parent),
+	neb::fnd::actor::rigidactor::base(parent),
+	neb::fnd::actor::local(parent),
+	neb::fnd::actor::actor::local(parent),
+	neb::fnd::actor::rigidactor::local(parent),
+	neb::fnd::actor::rigidstatic::base(parent),
+	neb::fnd::actor::rigidstatic::local(parent),
 	phx::core::actor::base(parent),
 	phx::core::actor::local(parent),
 	phx::core::actor::actor::base(parent),
@@ -32,7 +32,7 @@ phx::core::actor::rigidstatic::local::local(std::shared_ptr<phx::core::actor::ut
 void			phx::core::actor::rigidstatic::local::init() {
 	if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "phx core actor", debug) << __PRETTY_FUNCTION__;
 	
-	neb::core::actor::rigidstatic::local::init();
+	neb::fnd::actor::rigidstatic::local::init();
 	phx::core::actor::rigidactor::local::init();
 	phx::core::actor::rigidstatic::base::init();
 }
@@ -42,9 +42,9 @@ void			phx::core::actor::rigidstatic::local::release() {
 	boost::lock_guard<boost::recursive_mutex> lk(mutex_);
 
 
-	neb::core::actor::rigidstatic::base::releaseUp();
+	neb::fnd::actor::rigidstatic::base::releaseUp();
 
-	neb::core::actor::rigidstatic::local::releaseUp();
+	neb::fnd::actor::rigidstatic::local::releaseUp();
 
 	phx::core::actor::rigidstatic::base::releaseUp();
 	
@@ -54,7 +54,7 @@ void			phx::core::actor::rigidstatic::local::release() {
 void			phx::core::actor::rigidstatic::local::step(gal::etc::timestep const & ts) {
 	if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "phx core actor", debug) << __PRETTY_FUNCTION__;
 
-	neb::core::actor::rigidstatic::local::step(ts);
+	neb::fnd::actor::rigidstatic::local::step(ts);
 	phx::core::actor::rigidactor::local::step(ts);
 	phx::core::actor::rigidstatic::base::step(ts);
 

@@ -6,14 +6,14 @@
 
 void					neb::message::actor::IUpdate::serialize(boost::archive::polymorphic_iarchive & ar, unsigned int const & version) {
 	gal::itf::index_type i;
-	std::shared_ptr<neb::core::actor::base> actor;
+	std::shared_ptr<neb::fnd::actor::base> actor;
 	
 	size_t size;
 	ar >> size;
 	
 	for(size_t a = 0; a < size; ++a) {
 		ar >> i;
-		actor = std::dynamic_pointer_cast< neb::core::actor::base >(gal::itf::shared::registry_.get(i));
+		actor = std::dynamic_pointer_cast< neb::fnd::actor::base >(gal::itf::shared::registry_.get(i));
 		ar >> *actor;
 	}
 }
@@ -24,7 +24,7 @@ void					neb::message::actor::OUpdate::serialize(boost::archive::polymorphic_oar
 	ar << size;
 	
 	for(auto it = actors_.cbegin(); it != actors_.cend(); ++it) {
-		//std::shared_ptr<neb::core::actor::base> const & actor = *it;
+		//std::shared_ptr<neb::fnd::actor::base> const & actor = *it;
 		/** @todo why?!?!?!? */
 		//ar << actor->i_;
 		//ar << *actor;

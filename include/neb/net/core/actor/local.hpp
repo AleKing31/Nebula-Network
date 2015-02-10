@@ -10,7 +10,7 @@ namespace phx { namespace core { namespace actor {
 
 
 	class local:
-		virtual public neb::core::actor::local,
+		virtual public neb::fnd::actor::local,
 		virtual public phx::core::actor::base
 	{
 		public:

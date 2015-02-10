@@ -14,7 +14,7 @@ namespace phx { namespace core { namespace actor { namespace rigidstatic {
 
 
 	class remote:
-		virtual public neb::core::actor::rigidstatic::remote,
+		virtual public neb::fnd::actor::rigidstatic::remote,
 		virtual public phx::core::actor::rigidactor::remote,
 		virtual public phx::core::actor::rigidstatic::base
 	{

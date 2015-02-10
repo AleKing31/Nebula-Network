@@ -14,7 +14,7 @@ void		phx::core::scene::remote::step(gal::etc::timestep const & ts) {
 
 
 }
-void		phx::core::scene::remote::fire(std::shared_ptr<neb::core::actor::base> actor) {
+void		phx::core::scene::remote::fire(std::shared_ptr<neb::fnd::actor::base> actor) {
 	
 	auto message(sp::make_shared< phx::message::actor::event::OFire >());
 	
@@ -23,11 +23,11 @@ void		phx::core::scene::remote::fire(std::shared_ptr<neb::core::actor::base> act
 
 	neb::app::base::global()->sendClient(message);
 }
-std::weak_ptr<neb::core::actor::rigidstatic::base>	phx::core::scene::remote::createActorRigidStaticUninitialized() {
+std::weak_ptr<neb::fnd::actor::rigidstatic::base>	phx::core::scene::remote::createActorRigidStaticUninitialized() {
 	
 	auto actor(sp::make_shared<phx::core::actor::rigidstatic::remote>(isPxSceneRemote()));
 
-	neb::core::actor::util::parent::insert(actor);
+	neb::fnd::actor::util::parent::insert(actor);
 
 	actor->simulation_.word0 = phx::filter::filter::type::STATIC;
 	actor->simulation_.word1 = phx::filter::filter::RIGID_AGAINST;

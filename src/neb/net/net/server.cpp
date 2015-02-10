@@ -17,7 +17,7 @@ void		neb::Network::Server::accept(std::shared_ptr<neb::Network::Communicating> 
 	
 
 	// exp
-	//std::shared_ptr<neb::core::actor::Control::RigidBody::raw> control_raw(new neb::control::rigid_body::raw);
+	//std::shared_ptr<neb::fnd::actor::Control::RigidBody::raw> control_raw(new neb::control::rigid_body::raw);
 
 	/** @todo move all this to Box */
 
