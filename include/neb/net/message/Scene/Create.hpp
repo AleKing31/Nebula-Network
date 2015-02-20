@@ -4,30 +4,26 @@
 #include <boost/serialization/vector.hpp>
 #include <boost/serialization/shared_ptr.hpp>
 
-#include <neb/config.hh> // gru/config.hpp.in
+//#include <neb/config.hh> // gru/config.hpp.in
 //#include <Nebulahh>
-#include <neb/core/scene/Util/Address.hh>
+//#include <neb/core/core/scene/util/Address.hh>
 //#include <neb/core/actor/Util/Event.hh>
-#include <neb/core/actor/Base.hh>
-#include <neb/util/wrapper.hpp>
+#include <neb/core/core/actor/base.hpp>
 
-namespace neb {
-	namespace message {
-		namespace scene {
-			class Create {
-				public:
-					Create();
-					void load(std::shared_ptr<neb::fnd::scene::base>scene);
+namespace neb { namespace net { namespace msg { namespace scene {
+	class Create {
+		public:
+			typedef neb::fnd::core::scene::base S;
+			Create();
+			void load(std::shared_ptr<S> scene);
 
-					template<class Archive> void	serialize(Archive & ar, unsigned int const & version) {
-						ar & scene_;
-					}
+			template<class Archive> void	serialize(Archive & ar, unsigned int const & version) {
+				ar & scene_;
+			}
 
-					neb::stl::wrapper				scene_;
-			};
-		}
-	}
-}
+			gal::stl::wrapper<S>			scene_;
+	};
+}}}}
 
 #endif
 

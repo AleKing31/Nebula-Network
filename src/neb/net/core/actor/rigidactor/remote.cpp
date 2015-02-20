@@ -1,3 +1,4 @@
+/*
 #include <Galaxy-Log/log.hpp>
 #include <neb/debug.hh>
 
@@ -25,14 +26,14 @@ void		phx::core::actor::rigidactor::remote::init() {
 	phx::core::actor::actor::remote::init();
 	phx::core::actor::rigidactor::base::init();
 }
-/*void		phx::core::actor::rigidactor::remote::release() {
+*void		phx::core::actor::rigidactor::remote::release() {
 	if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "phx core actor", debug) << __PRETTY_FUNCTION__;
 
 	neb::fnd::actor::rigidactor::base::release();
 	phx::core::actor::actor::remote::release();
 	phx::core::actor::rigidactor::base::release();
 
-}*/
+}*
 void		phx::core::actor::rigidactor::remote::step(gal::etc::timestep const & ts) {
 	if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "phx core actor", debug) << __PRETTY_FUNCTION__;
 	
@@ -40,7 +41,7 @@ void		phx::core::actor::rigidactor::remote::step(gal::etc::timestep const & ts) 
 	phx::core::actor::actor::remote::step(ts);
 	phx::core::actor::rigidactor::base::step(ts);
 }
-
+*/
 
 
 

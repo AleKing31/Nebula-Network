@@ -15,12 +15,11 @@
 #include <neb/actor/actor.hh>
 */
 
-#include <Galaxy-Standard/wrapper.hpp>
+#include <gal/stl/wrapper.hpp>
 
-#include <neb/core/actor/Util/Types.hh>
+#include <neb/core/core/actor/util/decl.hpp>
 
-#include <neb/message/Actor/Base.hh>
-
+#include <neb/net/message/Actor/Base.hh>
 
 
 namespace neb {

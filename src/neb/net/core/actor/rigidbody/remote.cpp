@@ -1,7 +1,8 @@
-#include <neb/app/Base.hh>
+
+//#include <neb/app/Base.hh>
 
 //#include <PhysX/core/actor/rigidbody/Remote.hh>
-#include <PhysX/message/actor/control/rigidbody/update.hpp>
+//#include <PhysX/message/actor/control/rigidbody/update.hpp>
 /*
 void		phx::core::actor::rigidbody::remote::step(gal::etc::timestep const & ts) {
 	

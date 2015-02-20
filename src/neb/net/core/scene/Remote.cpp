@@ -1,6 +1,6 @@
 
 
-
+/*
 #include <neb/app/Base.hh>
 #include <neb/core/actor/base.hpp>
 
@@ -34,6 +34,6 @@ std::weak_ptr<neb::fnd::actor::rigidstatic::base>	phx::core::scene::remote::crea
 
 	return actor;
 }
-
+*/
 
 

@@ -6,9 +6,9 @@
 
 #include <gal/net/message.hpp>
 
-#include <neb/util/shared.hpp>
+#include <neb/core/itf/shared.hpp>
 
-#include <neb/message/Types.hh>
+#include <neb/net/message/Types.hh>
 
 namespace neb {
 	namespace message {
@@ -17,7 +17,7 @@ namespace neb {
 		 * 
 		 */
 		class base:
-			virtual public neb::itf::shared
+			virtual public neb::fnd::itf::shared
 		{
 			protected:
 				base();

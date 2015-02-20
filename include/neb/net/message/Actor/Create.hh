@@ -4,10 +4,10 @@
 #include <boost/serialization/vector.hpp>
 #include <boost/serialization/shared_ptr.hpp>
 
-#include <neb/config.hh>
-#include <neb/app/Base.hh>
-#include <neb/message/Actor/Event/Base.hh>
-#include <neb/core/actor/Base.hh>
+//#include <neb/config.hh>
+//#include <neb/coreapp/Base.hh>
+#include <neb/net/message/Actor/Event/Base.hh>
+#include <neb/core/core/actor/base.hpp>
 
 namespace neb {
 	namespace message {

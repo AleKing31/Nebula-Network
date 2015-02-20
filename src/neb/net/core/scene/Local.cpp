@@ -1,3 +1,4 @@
+/*
 
 #include <Galaxy-Log/log.hpp>
 
@@ -37,5 +38,5 @@ void			phx::core::scene::local::step(gal::etc::timestep const & ts) {
 
 }
 
-
+*/
 

@@ -2,7 +2,7 @@
 #define NEBULA_MESSAGE_ACTOR_BASE_HPP
 
 
-#include <neb/message/Base.hh>
+#include <neb/net/message/Base.hh>
 
 namespace neb {
 	namespace message {

@@ -1,7 +1,7 @@
 
-#include <Galaxy-Standard/registry.hpp>
+#include <gal/itf/registry.hpp>
 
-#include <neb/core/actor/base.hpp>
+#include <neb/core/core/actor/base.hpp>
 
 //#include <neb/message/Actor/Event/Base.hh>
 #include <neb/core/scene/base.hpp>

@@ -1,4 +1,5 @@
 
+/*
 #include <PhysX/core/actor/actor/local.hpp>
 
 phx::core::actor::actor::local::local(std::shared_ptr<phx::core::actor::util::parent> parent):
@@ -16,7 +17,7 @@ void		phx::core::actor::actor::local::init() {
 	phx::core::actor::actor::base::init();
 	
 }
-/*void		phx::core::actor::actor::local::release() {
+void		phx::core::actor::actor::local::release() {
 
 	neb::fnd::actor::actor::local::release();
 	phx::core::actor::actor::base::release();
@@ -25,7 +26,7 @@ void		phx::core::actor::actor::local::init() {
 		px_actor_->release();
 		px_actor_ = NULL;
 	}
-}*/
+}
 void		phx::core::actor::actor::local::step(gal::etc::timestep const & ts) {
 	
 	neb::fnd::actor::actor::local::step(ts);
@@ -33,4 +34,5 @@ void		phx::core::actor::actor::local::step(gal::etc::timestep const & ts) {
 
 
 }
+*/
 

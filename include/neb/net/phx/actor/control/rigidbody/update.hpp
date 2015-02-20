@@ -1,11 +1,11 @@
 #ifndef PHYSX_MESSAGE_ACTOR_CONTROL_HPP
 #define PHYSX_MESSAGE_ACTOR_CONTROL_HPP
 
-#include <Galaxy-Standard/wrapper.hpp>
+#include <gal/stl/wrapper.hpp>
 
-#include <neb/message/Actor/Base.hh>
+#include <neb/net/message/Actor/Base.hh>
 
-#include <PhysX/core/actor/util/decl.hpp>
+//#include <neb/net/phx/core/actor/util/decl.hpp>
 
 namespace phx { namespace message { namespace actor { namespace control {
 
@@ -16,7 +16,7 @@ namespace phx { namespace message { namespace actor { namespace control {
 		class create:
 			virtual public neb::message::actor::base
 		{
-			gal::stl::wrapper<phx::core::actor::control::rigidbody::base>		control_;
+			gal::stl::wrapper<neb::fnd::core::actor::control::rigidbody::base>		control_;
 		};
 		/** @brief %create. */
 		class icreate:

@@ -1,3 +1,4 @@
+/*
 #include <PhysX/core/actor/rigidbody/local.hpp>
 
 
@@ -22,12 +23,12 @@ void		phx::core::actor::rigidbody::local::init() {
 	neb::fnd::actor::rigidbody::base::init();
 	neb::fnd::actor::rigidactor::local::init();
 }
-/*void		phx::core::actor::rigidbody::local::release() {
+void		phx::core::actor::rigidbody::local::release() {
 	neb::fnd::actor::rigidbody::base::release();
 	neb::fnd::actor::rigidactor::local::release();
-}*/
+}
 void		phx::core::actor::rigidbody::local::step(gal::etc::timestep const & ts) {
 	neb::fnd::actor::rigidbody::base::step(ts);
 	neb::fnd::actor::rigidactor::local::step(ts);
 }
-
+*/

@@ -1,19 +1,19 @@
-#include <Galaxy-Standard/registry.hpp>
+#include <gal/itf/registry.hpp>
 
-#include <neb/core/actor/Base.hh>
-#include <neb/message/Actor/Update.hh>
+#include <neb/core/core/actor/base.hpp>
 
+#include <neb/net/message/Actor/Update.hh>
 
 void					neb::message::actor::IUpdate::serialize(boost::archive::polymorphic_iarchive & ar, unsigned int const & version) {
 	gal::itf::index_type i;
-	std::shared_ptr<neb::fnd::actor::base> actor;
+	std::shared_ptr<neb::fnd::core::actor::base> actor;
 	
 	size_t size;
 	ar >> size;
 	
 	for(size_t a = 0; a < size; ++a) {
 		ar >> i;
-		actor = std::dynamic_pointer_cast< neb::fnd::actor::base >(gal::itf::shared::registry_.get(i));
+		actor = std::dynamic_pointer_cast< neb::fnd::core::actor::base >(gal::itf::shared::registry_.get(i));
 		ar >> *actor;
 	}
 }

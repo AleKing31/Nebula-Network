@@ -1,7 +1,7 @@
 
-#include <neb/core/actor/Base.hh>
+#include <neb/core/core/actor/base.hpp>
 
-#include <neb/message/Actor/Create.hh>
+#include <neb/net/message/Actor/Create.hh>
 
 void		neb::message::actor::Create::load(std::shared_ptr<neb::fnd::actor::base> actor) {
 	assert(actor);

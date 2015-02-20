@@ -1,3 +1,4 @@
+/*
 #include <Galaxy-Log/log.hpp>
 
 #include <neb/debug.hh>
@@ -59,6 +60,6 @@ void			phx::core::actor::rigidstatic::local::step(gal::etc::timestep const & ts)
 	phx::core::actor::rigidstatic::base::step(ts);
 
 }
-
+*/
 
 

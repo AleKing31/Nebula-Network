@@ -1,4 +1,5 @@
 
+/*
 #include <PhysX/core/actor/actor/remote.hpp>
 
 phx::core::actor::actor::remote::remote(std::shared_ptr<phx::core::actor::util::parent> parent):
@@ -16,12 +17,12 @@ void		phx::core::actor::actor::remote::init() {
 	phx::core::actor::actor::base::init();
 	
 }
-/*void		phx::core::actor::actor::remote::release() {
+void		phx::core::actor::actor::remote::release() {
 
 	neb::fnd::actor::actor::remote::release();
 	phx::core::actor::actor::base::release();
 
-}*/
+}
 void		phx::core::actor::actor::remote::step(gal::etc::timestep const & ts) {
 	
 	neb::fnd::actor::actor::remote::step(ts);
@@ -29,5 +30,5 @@ void		phx::core::actor::actor::remote::step(gal::etc::timestep const & ts) {
 
 
 }
-
+*/
 

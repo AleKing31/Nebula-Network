@@ -1,4 +1,4 @@
-#include <neb/message/Base.hh>
+#include <neb/net/message/Base.hh>
 
 neb::message::base::base() {
 }

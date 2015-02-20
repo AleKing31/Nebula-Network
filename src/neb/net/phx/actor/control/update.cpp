@@ -1,9 +1,11 @@
 
-#include <Galaxy-Standard/registry.hpp>
 
-#include <PhysX/core/actor/rigidbody/base.hpp>
-#include <PhysX/core/actor/control/rigidbody/base.hpp>
-#include <PhysX/message/actor/control/rigidbody/update.hpp>
+//#include <Galaxy-Standard/registry.hpp>
+
+#include <neb/core/core/actor/rigidbody/Base.hpp>
+#include <neb/core/core/actor/control/rigidbody/Base.hpp>
+
+#include <neb/net/phx/actor/control/rigidbody/update.hpp>
 
 void			phx::message::actor::control::rigidbody::iupdate::serialize(
 		boost::archive::polymorphic_iarchive & ar,

@@ -1,3 +1,4 @@
+/*
 #include <Galaxy-Log/log.hpp>
 #include <neb/debug.hh>
 
@@ -35,11 +36,11 @@ void				phx::core::actor::rigiddynamic::local::init() {
 	phx::core::actor::rigidbody::local::init();
 	phx::core::actor::rigiddynamic::base::init();
 }
-/*void				phx::core::actor::rigiddynamic::local::releaseUp() {
+*void				phx::core::actor::rigiddynamic::local::releaseUp() {
 //phx::core::actor::rigidbody::local::releaseUp();
 //phx::core::actor::actor::local::releaseUp();
 // nothing to do here
-}*/
+}*
 void				phx::core::actor::rigiddynamic::local::release() {
 	if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "phx core actor", debug) << __PRETTY_FUNCTION__;
 
@@ -60,9 +61,9 @@ void				phx::core::actor::rigiddynamic::local::step(gal::etc::timestep const & t
 	phx::core::actor::rigidbody::local::step(ts);
 	phx::core::actor::rigiddynamic::base::step(ts);
 }
-/*std::shared_ptr<phx::core::actor::rigiddynamic::base>		phx::core::actor::rigiddynamic::local::get_projectile() {
+*std::shared_ptr<phx::core::actor::rigiddynamic::base>		phx::core::actor::rigiddynamic::local::get_projectile() {
   return phx::core::actor::base_s();
-  }*/
+  }*
 void				phx::core::actor::rigiddynamic::local::add_force(real time) {
 	if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "phx core actor", debug) << __PRETTY_FUNCTION__;
 	phx::core::actor::rigidbody::base::add_force(time);
@@ -85,5 +86,5 @@ void				phx::core::actor::rigiddynamic::local::setPose(neb::fnd::pose const & po
 	phx::core::actor::rigiddynamic::base::setPose(pose);
 
 }
-
+*/
 
