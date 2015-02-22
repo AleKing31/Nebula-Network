@@ -3,7 +3,7 @@
 
 #include <PxPhysicsAPI.h>
 
-#include <neb/core/actor/Actor/Local.hh>
+#include <neb/fnd/actor/Actor/Local.hh>
 
 #include <PhysX/core/actor/local.hpp>
 #include <PhysX/core/actor/actor/base.hpp>

@@ -3,8 +3,8 @@
 #include <Galaxy-Log/log.hpp>
 
 #include <neb/app/Base.hh>
-#include <neb/core/scene/Local.hh>
-#include <neb/core/actor/RigidBody/Base.hh>
+#include <neb/fnd/scene/Local.hh>
+#include <neb/fnd/actor/RigidBody/Base.hh>
 #include <neb/timer/Actor/Release.hpp>
 #include <neb/debug.hh>
 

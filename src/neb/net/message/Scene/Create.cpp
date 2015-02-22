@@ -1,6 +1,6 @@
 
 //#include <neb/app/Base.hh>
-#include <neb/core/core/scene/base.hpp>
+#include <neb/fnd/core/scene/base.hpp>
 #include <neb/net/message/Scene/Create.hpp>
 
 neb::message::scene::Create::Create() {

@@ -3,7 +3,7 @@
 
 #include <PxPhysicsAPI.h>
 
-#include <neb/core/actor/RigidStatic/local.hpp>
+#include <neb/fnd/actor/RigidStatic/local.hpp>
 
 #include <PhysX/core/actor/rigidstatic/base.hpp>
 #include <PhysX/core/actor/rigidactor/local.hpp>

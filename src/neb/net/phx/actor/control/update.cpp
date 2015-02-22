@@ -2,8 +2,8 @@
 
 //#include <Galaxy-Standard/registry.hpp>
 
-#include <neb/core/core/actor/rigidbody/Base.hpp>
-#include <neb/core/core/actor/control/rigidbody/Base.hpp>
+#include <neb/fnd/core/actor/rigidbody/Base.hpp>
+#include <neb/fnd/core/actor/control/rigidbody/Base.hpp>
 
 #include <neb/net/phx/actor/control/rigidbody/update.hpp>
 

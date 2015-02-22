@@ -6,13 +6,13 @@
 
 #include <neb/util/decl.hpp>
 
-#include <neb/core/scene/Remote.hh>
+#include <neb/fnd/scene/Remote.hh>
 
 #include <neb/config.hh> // Nebula/config.hpp.in
 #include <neb/gfx/glsl/program.hpp>
 
-//#include <neb/core/actor/base.hpp>
-#include <neb/core/actor/Util/Parent.hh>
+//#include <neb/fnd/actor/base.hpp>
+#include <neb/fnd/actor/Util/Parent.hh>
 
 #include <neb/gfx/camera/view/Base.hh>
 

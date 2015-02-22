@@ -1,10 +1,10 @@
 
 #include <gal/itf/registry.hpp>
 
-#include <neb/core/core/actor/base.hpp>
+#include <neb/fnd/core/actor/base.hpp>
 
 //#include <neb/message/Actor/Event/Base.hh>
-#include <neb/core/scene/base.hpp>
+#include <neb/fnd/scene/base.hpp>
 
 
 #include <PhysX/core/actor/actor/base.hpp>

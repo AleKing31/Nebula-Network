@@ -7,14 +7,14 @@
 
 #include <neb/util/decl.hpp>
 
-#include <neb/core/scene/base.hpp>
-#include <neb/core/scene/Util/Types.hh>
+#include <neb/fnd/scene/base.hpp>
+#include <neb/fnd/scene/Util/Types.hh>
 
 #include <neb/util/config.hh> // Nebula/config.hpp.in
 #include <neb/gfx/glsl/program.hpp>
 
-//#include <neb/core/actor/base.hpp>
-#include <neb/core/actor/Util/Parent.hh>
+//#include <neb/fnd/actor/base.hpp>
+#include <neb/fnd/actor/Util/Parent.hh>
 
 #include <neb/gfx/camera/view/Base.hh>
 

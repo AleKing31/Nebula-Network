@@ -4,8 +4,8 @@
 
 #include <neb/util/typedef.hpp>
 #include <neb/app/Base.hh>
-#include <neb/core/actor/base.hpp>
-#include <neb/core/scene/Base.hh>
+#include <neb/fnd/actor/base.hpp>
+#include <neb/fnd/scene/Base.hh>
 
 neb::Network::Server::Server(
 		boost::asio::io_service& io_service,

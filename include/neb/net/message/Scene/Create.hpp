@@ -6,9 +6,9 @@
 
 //#include <neb/config.hh> // gru/config.hpp.in
 //#include <Nebulahh>
-//#include <neb/core/core/scene/util/Address.hh>
-//#include <neb/core/actor/Util/Event.hh>
-#include <neb/core/core/actor/base.hpp>
+//#include <neb/fnd/core/scene/util/Address.hh>
+//#include <neb/fnd/actor/Util/Event.hh>
+#include <neb/fnd/core/actor/base.hpp>
 
 namespace neb { namespace net { namespace msg { namespace scene {
 	class Create {
