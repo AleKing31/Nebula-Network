@@ -1,7 +1,7 @@
 
 #include <gal/itf/registry.hpp>
 
-#include <neb/fnd/core/actor/base.hpp>
+#include <neb/fnd/core/actor/Base.hpp>
 
 //#include <neb/message/Actor/Event/Base.hh>
 #include <neb/fnd/scene/base.hpp>

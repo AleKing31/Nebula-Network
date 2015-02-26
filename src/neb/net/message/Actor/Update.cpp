@@ -1,6 +1,6 @@
 #include <gal/itf/registry.hpp>
 
-#include <neb/fnd/core/actor/base.hpp>
+#include <neb/fnd/core/actor/Base.hpp>
 
 #include <neb/net/message/Actor/Update.hh>
 

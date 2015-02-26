@@ -8,7 +8,7 @@
 //#include <Nebulahh>
 //#include <neb/fnd/core/scene/util/Address.hh>
 //#include <neb/fnd/actor/Util/Event.hh>
-#include <neb/fnd/core/actor/base.hpp>
+#include <neb/fnd/core/actor/Base.hpp>
 
 namespace neb { namespace net { namespace msg { namespace scene {
 	class Create {
