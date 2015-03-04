@@ -3,9 +3,13 @@
 #include <neb/fnd/core/scene/Base.hpp>
 #include <neb/net/message/Scene/Create.hpp>
 
-neb::message::scene::Create::Create() {
+typedef neb::net::msg::scene::Create THIS;
+
+THIS::Create()
+{
 }
-void neb::message::scene::Create::load(std::shared_ptr<neb::fnd::scene::base> scene) {
+void			THIS::load(std::shared_ptr<neb::fnd::core::scene::base> scene)
+{
 	scene_.ptr_ = scene;
 }
 

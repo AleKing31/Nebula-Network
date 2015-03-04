@@ -1,7 +1,7 @@
 #ifndef __NEBULA_ASIO_NETWORK_COMMUNICATING_H__
 #define __NEBULA_ASIO_NETWORK_COMMUNICATING_H__
 
-#include <neb/util/decl.hpp>
+//#include <neb/util/decl.hpp>
 
 #include <gal/net/communicating.hpp>
 

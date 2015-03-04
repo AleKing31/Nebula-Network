@@ -1,36 +1,44 @@
-#include <Galaxy-Log/log.hpp>
+#include <neb/fnd/app/Base.hpp>
 
-#include <neb/debug.hh>
-#include <neb/util/wrapper.hpp>
-#include <neb/app/__net.hpp>
+//#include <neb/debug.hh>
+//#include <neb/util/wrapper.hpp>
+#include <neb/__net.hpp>
 
-void neb::app::__net::reset_server(ip::tcp::endpoint const & endpoint) {
+typedef neb::net::app::Base THIS;
+
+void THIS::reset_server(ip::tcp::endpoint const & endpoint)
+{
+	auto app = getParent();
+	
 	//NEBULA_DEBUG_0_FUNCTION;
-	server_.reset(new neb::Network::Server(ios_, endpoint));
+	server_.reset(new neb::Network::Server(app->ios_, endpoint));
 }
-void neb::app::__net::reset_client(ip::tcp::resolver::iterator endpoint_iterator) {
+void THIS::reset_client(ip::tcp::resolver::iterator endpoint_iterator)
+{
+	auto app = getParent();
+	
 	//NEBULA_DEBUG_0_FUNCTION;
-	client_.reset(new neb::Network::Client(ios_, endpoint_iterator));
+	client_.reset(new neb::Network::Client(app->ios_, endpoint_iterator));
 }
-void		neb::app::__net::sendServer(std::shared_ptr< gal::net::omessage > msg)  {
+void		THIS::sendServer(std::shared_ptr< gal::net::omessage > msg)  {
 	//NEBULA_DEBUG_1_FUNCTION;
 
 	if(server_) {
 		server_->write(msg);
 	} else {
-		if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "neb", debug) << "no server";
+		printv(DEBUG, "no server\n");
 	}
 }
-void		neb::app::__net::sendClient(std::shared_ptr< gal::net::omessage > msg)  {
+void		THIS::sendClient(std::shared_ptr< gal::net::omessage > msg)  {
 	//NEBULA_DEBUG_1_FUNCTION;
 
 	if(client_) {
 		client_->write(msg);
 	} else {
-		if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "neb", debug) << "no client";
+		printv(DEBUG, "no client\n");
 	}
 }
-void		neb::app::__net::sendClient(std::shared_ptr< neb::message::OBase > message) {
+void		THIS::sendClient(std::shared_ptr< neb::message::OBase > message) {
 	assert(message);
 	
 	/** @todo wtf */
@@ -43,7 +51,7 @@ void		neb::app::__net::sendClient(std::shared_ptr< neb::message::OBase > message
 
 	sendClient(buffer);
 }
-void		neb::app::__net::sendServer(std::shared_ptr< neb::message::OBase > message) {
+void		THIS::sendServer(std::shared_ptr< neb::message::OBase > message) {
 	assert(message);
 
 	/** @todo wtf */

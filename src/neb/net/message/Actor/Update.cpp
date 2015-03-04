@@ -4,7 +4,7 @@
 
 #include <neb/net/message/Actor/Update.hh>
 
-void					neb::message::actor::IUpdate::serialize(boost::archive::polymorphic_iarchive & ar, unsigned int const & version) {
+void					neb::net::msg::actor::IUpdate::serialize(boost::archive::polymorphic_iarchive & ar, unsigned int const & version) {
 	gal::itf::index_type i;
 	std::shared_ptr<neb::fnd::core::actor::base> actor;
 	
@@ -19,7 +19,7 @@ void					neb::message::actor::IUpdate::serialize(boost::archive::polymorphic_iar
 }
 
 
-void					neb::message::actor::OUpdate::serialize(boost::archive::polymorphic_oarchive & ar, unsigned int const & version) {
+void					neb::net::msg::actor::OUpdate::serialize(boost::archive::polymorphic_oarchive & ar, unsigned int const & version) {
 	size_t size = actors_.size();
 	ar << size;
 	

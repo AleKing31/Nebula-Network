@@ -6,41 +6,34 @@
 #include <boost/archive/polymorphic_xml_iarchive.hpp>
 
 #include <gal/itf/shared.hpp>
+#include <gal/stl/verbosity.hpp>
 
 #include <gal/net/decl.hpp>
 
-#include <neb/app/__base.hpp>
-#include <neb/net/server.hh>
-#include <neb/net/client.hh>
-#include <neb/message/Types.hh>
+#include <neb/fnd/plug/net/app/Base.hpp>
 
-namespace neb {
-	namespace app {
+//#include <neb/app/__base.hpp>
+#include <neb/net/net/server.hh>
+#include <neb/net/net/client.hh>
+#include <neb/net/message/Types.hh>
 
+namespace neb { namespace net { namespace app {
+	class Base:
+		public gal::tmp::Verbosity<neb::net::app::Base>,
+		virtual public neb::fnd::plug::net::app::Base
+	{
+		public:
+			void			reset_server(ip::tcp::endpoint const & endpoint);
+			void			reset_client(ip::tcp::resolver::iterator endpoint_iterator);
+			void			sendServer(std::shared_ptr< gal::net::omessage >);
+			void			sendServer(std::shared_ptr< neb::message::OBase > message);
+			void			sendClient(std::shared_ptr< gal::net::omessage >);
+			void			sendClient(std::shared_ptr< neb::message::OBase > message);
+			std::shared_ptr<neb::Network::Server>				server_;
+			std::shared_ptr<neb::Network::Client>				client_;
+	};
+}}}
 
-		class __net:
-			virtual public neb::app::__base
-		{
-			public:
-				void					reset_server(ip::tcp::endpoint const & endpoint);
-				void					reset_client(ip::tcp::resolver::iterator endpoint_iterator);
-
-				void					sendServer(std::shared_ptr< gal::net::omessage >);
-				void					sendServer(std::shared_ptr< neb::message::OBase > message);
-				void					sendClient(std::shared_ptr< gal::net::omessage >);
-				void					sendClient(std::shared_ptr< neb::message::OBase > message);
-
-
-				std::shared_ptr<neb::Network::Server>				server_;
-				std::shared_ptr<neb::Network::Client>				client_;
-
-		};
-
-	}
-}
 #endif
-
-
-
 
 

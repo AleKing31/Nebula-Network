@@ -3,7 +3,7 @@
 
 #include <gal/net/client.hpp>
 
-#include <neb/net/communicating.hh>
+#include <neb/net/net/communicating.hh>
 
 namespace neb {
 	namespace Network {
@@ -13,8 +13,9 @@ namespace neb {
 		{
 			public:
 				Client(boost::asio::io_service& io_service, ip::tcp::resolver::iterator endpoint_iterator);
-				void		process(std::shared_ptr< gal::net::imessage > message);
-
+				void			process(
+						std::shared_ptr< gal::net::imessage > message);
+				virtual void		release();
 		};
 	}
 }

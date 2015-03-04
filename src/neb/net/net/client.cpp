@@ -12,11 +12,13 @@
 
 #include <gal/net/message.hpp>
 
-#include <neb/fnd/actor/base.hpp>
+#include <neb/fnd/core/actor/Base.hpp>
 
-#include <neb/config.hh>
-#include <neb/app/Base.hh>
-#include <neb/fnd/scene/Base.hh>
+//#include <neb/config.hh>
+#include <neb/fnd/app/Base.hpp>
+#include <neb/fnd/core/scene/Base.hpp>
+
+#include <neb/net/net/client.hh>
 
 neb::Network::Client::Client(boost::asio::io_service& io_service, ip::tcp::resolver::iterator endpoint_iterator):
 	gal::net::communicating(io_service),

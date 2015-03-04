@@ -17,33 +17,28 @@
 
 #include <gal/stl/wrapper.hpp>
 
-#include <neb/core/core/actor/util/decl.hpp>
+#include <neb/fnd/core/actor/util/decl.hpp>
 
 #include <neb/net/message/Actor/Base.hh>
 
 
-namespace neb {
-	namespace message {
-		namespace actor {
-			namespace Event {
-				/** @brief %Base */
-				class base: virtual public neb::message::actor::base {
-					public:
-				};
-				class IBase:
-					virtual public neb::message::actor::IBase,
-					virtual public neb::message::actor::Event::base
-				{
-				};
-				class OBase:
-					virtual public neb::message::actor::OBase,
-					virtual public neb::message::actor::Event::base
-				{
-				};
-			}
-		}
-	}
-}
+namespace neb { namespace net { namespace msg { namespace actor { namespace Event {
+	/** @brief %Base */
+	class base: virtual public neb::net::msg::actor::base {
+		public:
+	};
+	class IBase:
+		virtual public neb::net::msg::actor::IBase,
+		virtual public neb::net::msg::actor::Event::base
+	{
+	};
+	class OBase:
+		virtual public neb::net::msg::actor::OBase,
+		virtual public neb::net::msg::actor::Event::base
+	{
+	};
+}}}}}
+
 
 #endif
 

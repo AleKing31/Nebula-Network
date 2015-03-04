@@ -4,28 +4,28 @@
 #include <boost/serialization/vector.hpp>
 #include <boost/serialization/shared_ptr.hpp>
 
-#include <neb/core/core/scene/util/decl.hpp>
+#include <neb/fnd/core/scene/util/decl.hpp>
 
 //#include <neb/config.hh> // gru/config.hpp.in
 //#include <neb/master.hh>
 //#include <neb/core/scene/desc.hh>
 //#include <neb/core/actor/desc.hh>
 //#include <neb/core/actor/event.hh>
-#include <neb/core/core/actor/util/decl.hpp>
+#include <neb/fnd/core/actor/util/decl.hpp>
 
 //#include <neb/core/scene/Base.hh>
 
 #include <neb/net/message/Actor/Base.hh>
 
-namespace neb { namespace message { namespace actor {
+namespace neb { namespace net { namespace msg { namespace actor {
 	struct Update:
-		virtual public neb::message::actor::base
+		virtual public neb::net::msg::actor::base
 	{	
 		Update() {}
 	};
 	class OUpdate:
-		virtual public neb::message::actor::OBase,
-		virtual public neb::message::actor::Update
+		virtual public neb::net::msg::actor::OBase,
+		virtual public neb::net::msg::actor::Update
 	{
 		public:
 			/** @brief Save %Actor. */
@@ -36,13 +36,13 @@ namespace neb { namespace message { namespace actor {
 			::std::vector< std::shared_ptr<neb::fnd::core::actor::base> >	actors_;
 	};
 	class IUpdate:
-		virtual public neb::message::actor::IBase,
-		virtual public neb::message::actor::Update
+		virtual public neb::net::msg::actor::IBase,
+		virtual public neb::net::msg::actor::Update
 	{
 		/** @brief Load */
 		virtual void		serialize(boost::archive::polymorphic_iarchive& ar, unsigned int const & version);
 	};
-}}}
+}}}}
 
 #endif
 

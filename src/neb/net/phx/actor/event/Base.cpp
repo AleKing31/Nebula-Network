@@ -4,16 +4,15 @@
 #include <neb/fnd/core/actor/Base.hpp>
 
 //#include <neb/message/Actor/Event/Base.hh>
-#include <neb/fnd/scene/base.hpp>
+#include <neb/fnd/core/scene/Base.hpp>
 
-
+/*
 #include <PhysX/core/actor/actor/base.hpp>
 #include <PhysX/message/actor/event/Base.hh>
 
-/*
-void		neb::message::actor::Event::serialize(boost::archive::polymorphic_oarchive & ar, unsigned int const & version) {
-	ar & event_;
-}*/
+//void		neb::message::actor::Event::serialize(boost::archive::polymorphic_oarchive & ar, unsigned int const & version) {
+//	ar & event_;
+//}
 void		phx::message::actor::event::IFire::serialize(boost::archive::polymorphic_iarchive & ar, unsigned int const & version) {
 	neb::message::actor::IBase::serialize(ar, version);
 	
@@ -23,7 +22,7 @@ void		phx::message::actor::event::IFire::serialize(boost::archive::polymorphic_i
 	//auto scene = actor->getScene();
 	//assert(scene);
 	
-	/** @todo this event should be a weapon::event, not an actor::event */
+	** @todo this event should be a weapon::event, not an actor::event *
 
 	//scene->fire(actor);
 	//actor->fire();
@@ -38,14 +37,14 @@ void		phx::message::actor::event::OFire::serialize(boost::archive::polymorphic_o
 	//auto scene = actor->getScene();
 	//assert(scene);
 	
-	/** @todo this event should be a weapon::event, not an actor::event */
+	** @todo this event should be a weapon::event, not an actor::event *
 
 	//scene->fire(actor);
 	//actor->fire();
 }
 
 
-
+*/
 
 
 

@@ -1,11 +1,9 @@
 #include <neb/net/message/Base.hh>
 
-neb::message::base::base() {
+typedef neb::net::msg::base THIS;
+
+THIS::base()
+{
 }
 
-neb::message::OBase::OBase() {
-}
-
-neb::message::IBase::IBase() {
-}
 

@@ -3,12 +3,13 @@
 
 #include <neb/net/message/Actor/Create.hh>
 
-void		neb::message::actor::Create::load(std::shared_ptr<neb::fnd::actor::base> actor) {
+void		neb::net::msg::actor::Create::load(std::shared_ptr<neb::fnd::core::actor::base> actor)
+{
 	assert(actor);
 
-	parent_i_ = actor->get_parent()->i_;
+	parent_i_ = actor->getParent()->_M_index;
 	
-	i_ = actor->i_;
+	i_ = actor->_M_index;
 	
 	wrapper_.ptr_ = actor;
 }

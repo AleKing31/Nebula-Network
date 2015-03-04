@@ -2,10 +2,12 @@
 
 #include <gal/net/server.hpp>
 
-#include <neb/util/typedef.hpp>
-#include <neb/app/Base.hh>
-#include <neb/fnd/actor/base.hpp>
-#include <neb/fnd/scene/Base.hh>
+//#include <neb/util/typedef.hpp>
+#include <neb/fnd/app/Base.hpp>
+#include <neb/fnd/core/actor/Base.hpp>
+#include <neb/fnd/core/scene/Base.hpp>
+
+#include <neb/net/net/server.hh>
 
 neb::Network::Server::Server(
 		boost::asio::io_service& io_service,
