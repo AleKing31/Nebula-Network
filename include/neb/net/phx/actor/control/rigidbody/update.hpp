@@ -5,7 +5,7 @@
 
 #include <neb/fnd/core/actor/util/decl.hpp>
 
-#include <neb/net/message/Actor/Base.hh>
+#include <neb/fnd/net/message/actor/Base.hpp>
 
 //#include <neb/net/phx/core/actor/util/decl.hpp>
 

@@ -20,7 +20,8 @@ void THIS::reset_client(ip::tcp::resolver::iterator endpoint_iterator)
 	//NEBULA_DEBUG_0_FUNCTION;
 	client_.reset(new neb::Network::Client(app->ios_, endpoint_iterator));
 }
-void		THIS::sendServer(std::shared_ptr< gal::net::omessage > msg)  {
+void		THIS::sendServer(std::shared_ptr<gal::net::omessage> msg)
+{
 	//NEBULA_DEBUG_1_FUNCTION;
 
 	if(server_) {
@@ -29,7 +30,8 @@ void		THIS::sendServer(std::shared_ptr< gal::net::omessage > msg)  {
 		printv(DEBUG, "no server\n");
 	}
 }
-void		THIS::sendClient(std::shared_ptr< gal::net::omessage > msg)  {
+void		THIS::sendClient(std::shared_ptr<gal::net::omessage> msg)
+{
 	//NEBULA_DEBUG_1_FUNCTION;
 
 	if(client_) {
@@ -38,7 +40,8 @@ void		THIS::sendClient(std::shared_ptr< gal::net::omessage > msg)  {
 		printv(DEBUG, "no client\n");
 	}
 }
-void		THIS::sendClient(std::shared_ptr< neb::message::OBase > message) {
+void		THIS::sendClient(std::shared_ptr<neb::fnd::net::msg::Base> message)
+{
 	assert(message);
 	
 	/** @todo wtf */
@@ -51,7 +54,8 @@ void		THIS::sendClient(std::shared_ptr< neb::message::OBase > message) {
 
 	sendClient(buffer);
 }
-void		THIS::sendServer(std::shared_ptr< neb::message::OBase > message) {
+void		THIS::sendServer(std::shared_ptr<neb::fnd::net::msg::Base> message)
+{
 	assert(message);
 
 	/** @todo wtf */

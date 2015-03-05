@@ -3,7 +3,8 @@
 #include <gal/log/log.hpp>
 #include <gal/stl/wrapper.hpp>
 
-#include <neb/net/message/Base.hh>
+#include <neb/fnd/net/message/Base.hpp>
+
 #include <neb/net/net/communicating.hh>
 
 typedef neb::Network::Communicating THIS;
