@@ -7,9 +7,9 @@ void		neb::net::msg::actor::Create::load(std::shared_ptr<neb::fnd::core::actor::
 {
 	assert(actor);
 
-	parent_i_ = actor->getParent()->_M_index;
+	parent_i_ = actor->getParent()->get_index();
 	
-	i_ = actor->_M_index;
+	i_ = actor->get_index();
 	
 	wrapper_.ptr_ = actor;
 }
