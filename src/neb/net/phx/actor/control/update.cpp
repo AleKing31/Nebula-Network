@@ -8,14 +8,23 @@
 
 #include <neb/net/phx/actor/control/rigidbody/update.hpp>
 
-void			neb::net::msg::actor::control::rigidbody::iupdate::serialize(
+typedef neb::net::msg::actor::control::rigidbody::update THIS;
+
+THIS::~update()
+{
+}
+void			THIS::load(
 		boost::archive::polymorphic_iarchive & ar,
 		unsigned int const & version)
 {
-	neb::net::msg::actor::IBase::serialize(ar, version);
+	neb::net::msg::actor::Base::serialize(ar, version);
 	ar >> control_;
-	
-	auto actor = std::dynamic_pointer_cast<neb::fnd::core::actor::base>(gal::itf::shared::registry_.get(index_));
+
+	typedef neb::fnd::core::actor::base T;
+
+	auto reg = get_registry();
+
+	auto actor = std::dynamic_pointer_cast<T>(reg->get(index_));
 	assert(actor);
 
 	auto rigidbody = actor->is_fnd_actor_rigidbody_base(); //PxActorRigidBodyBase();
@@ -26,7 +35,10 @@ void			neb::net::msg::actor::control::rigidbody::iupdate::serialize(
 
 	rigidbody->control_->operator=(*control_.ptr_);
 }
-
-
+void			THIS::save(
+		boost::archive::polymorphic_oarchive & ar,
+		unsigned int const & version)
+{
+}
 
 

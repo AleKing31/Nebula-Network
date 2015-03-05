@@ -12,35 +12,22 @@
 
 namespace neb { namespace net { namespace msg {
 	/** \brief %Base
-	 *
-	 * 
 	 */
-	class base:
+	class Base:
 		virtual public neb::fnd::itf::shared
 	{
 		protected:
-			base();
-			virtual ~base() {}
-	};
-	class OBase:
-		virtual public neb::net::msg::base
-	{
+			Base();
 		public:
-			OBase();
-			virtual void			serialize(
-					boost::archive::polymorphic_oarchive & ar,
+			virtual ~Base();
+			virtual void			load(
+					boost::archive::polymorphic_iarchive & ar,
 					unsigned int const & version) = 0;			
-		public:
-			std::shared_ptr<gal::net::omessage>	msg_;
-	};
-	class IBase:
-		virtual public neb::net::msg::base
-	{
-		public:
-			IBase();
-			virtual void			serialize(boost::archive::polymorphic_iarchive & ar, unsigned int const & version) = 0;
-		public:
-			std::shared_ptr<gal::net::omessage>	msg_;
+			virtual void			save(
+					boost::archive::polymorphic_oarchive & ar,
+					unsigned int const & version) = 0;
+			BOOST_SERIALIZATION_SPLIT_MEMBER();
+			std::shared_ptr<gal::net::message>	msg_;
 	};
 }}}
 

@@ -10,65 +10,35 @@
 //#include <neb/net/phx/core/actor/util/decl.hpp>
 
 namespace neb { namespace net { namespace msg { namespace actor { namespace control { namespace rigidbody {
-
-
 	/** @brief %create. */
 	class create:
-		virtual public neb::net::msg::actor::base
+		virtual public neb::net::msg::actor::Base
 	{
-		gal::stl::wrapper<neb::fnd::core::actor::control::rigidbody::base>		control_;
-	};
-	/** @brief %create. */
-	class icreate:
-		virtual public neb::net::msg::actor::base
-	{
-		public:
-			/** @brief derived serialize. */
-			virtual void					serializederived(
-					boost::archive::polymorphic_iarchive & ar,
-					unsigned int const & version);
-	};
-	/** @brief %create. */
-	class ocreate:
-		virtual public neb::net::msg::actor::base
-	{
-		public:
-			/** @brief derived serialize. */
-			virtual void					serializeDerived(
-					boost::archive::polymorphic_oarchive & ar,
-					unsigned int const & version);
+	public:
+		typedef neb::fnd::core::actor::control::rigidbody::base T;
+		virtual void			load(
+				boost::archive::polymorphic_iarchive & ar,
+				unsigned int const & version);
+		virtual void			save(
+				boost::archive::polymorphic_oarchive & ar,
+				unsigned int const & version);
+		gal::stl::wrapper<T>		control_;
 	};
 	/** @brief %Update. */
 	class update:
-		virtual public neb::net::msg::actor::base
+		virtual public neb::net::msg::actor::Base
 	{
-		public:
-			virtual ~update() = 0;
-		public:
-			gal::stl::wrapper<neb::fnd::core::actor::control::rigidbody::base>		control_;
-	};
-	/** @brief %update. */
-	class iupdate:
-		virtual public neb::net::msg::actor::IBase,
-		virtual public neb::net::msg::actor::control::rigidbody::update
-	{
-		public:
-			virtual ~iupdate();
-			/** @brief derived serialize. */
-			virtual void					serialize(
-					boost::archive::polymorphic_iarchive & ar,
-					unsigned int const & version);
-	};
-	/** @brief %update. */
-	class oupdate:
-		virtual public neb::net::msg::actor::OBase,
-		virtual public neb::net::msg::actor::control::rigidbody::update
-	{
-		public:
-			/** @brief derived serialize. */
-			virtual void					serialize(
-					boost::archive::polymorphic_oarchive & ar,
-					unsigned int const & version);
+	public:
+		typedef neb::fnd::core::actor::control::rigidbody::base T;
+		virtual ~update();
+		virtual void			load(
+				boost::archive::polymorphic_iarchive & ar,
+				unsigned int const & version);
+		virtual void			save(
+				boost::archive::polymorphic_oarchive & ar,
+				unsigned int const & version);
+		BOOST_SERIALIZATION_SPLIT_MEMBER();
+		gal::stl::wrapper<T>		control_;
 	};
 }}}}}}
 

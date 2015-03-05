@@ -4,8 +4,8 @@
 #include <neb/net/message/Base.hh>
 
 namespace neb { namespace net { namespace msg { namespace actor {
-	class base:
-		virtual public neb::net::msg::base
+	class Base:
+		virtual public neb::net::msg::Base
 	{
 		public:
 			/** @brief index
@@ -13,32 +13,22 @@ namespace neb { namespace net { namespace msg { namespace actor {
 			 * index of actor
 			 */
 			gal::itf::index_type			index_;
-	};
-	class IBase:
-		virtual public neb::net::msg::IBase,
-		virtual public neb::net::msg::actor::base
-	{
 		private:
-			IBase&			operator=(IBase const &);
+			Base&			operator=(Base const &);
 		public:
-			virtual void		serialize(
+			virtual void		load(
 					boost::archive::polymorphic_iarchive & ar,
 					unsigned int const & version)
 			{
 				ar & index_;
 			}
-	};
-	class OBase:
-		virtual public neb::net::msg::OBase,
-		virtual public neb::net::msg::actor::base
-	{
-		public:
-			virtual void		serialize(
+			virtual void		save(
 					boost::archive::polymorphic_oarchive & ar,
 					unsigned int const & version)
 			{
 				ar & index_;
 			}
+			BOOST_SERIALIZATION_SPLIT_MEMBER();
 	};
 }}}}
 

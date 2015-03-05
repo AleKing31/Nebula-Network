@@ -24,18 +24,10 @@
 
 namespace neb { namespace net { namespace msg { namespace actor { namespace Event {
 	/** @brief %Base */
-	class base: virtual public neb::net::msg::actor::base {
+	class Base:
+		virtual public neb::net::msg::actor::Base
+	{
 		public:
-	};
-	class IBase:
-		virtual public neb::net::msg::actor::IBase,
-		virtual public neb::net::msg::actor::Event::base
-	{
-	};
-	class OBase:
-		virtual public neb::net::msg::actor::OBase,
-		virtual public neb::net::msg::actor::Event::base
-	{
 	};
 }}}}}
 
