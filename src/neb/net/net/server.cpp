@@ -9,13 +9,19 @@
 
 #include <neb/net/net/server.hh>
 
-neb::Network::Server::Server(
+typedef neb::Network::Server THIS;
+
+THIS::Server(
 		boost::asio::io_service& io_service,
 		ip::tcp::endpoint const & endpoint):
 	gal::net::server<neb::Network::Communicating>(io_service, endpoint)
 {
 }
-void		neb::Network::Server::accept(std::shared_ptr<neb::Network::Communicating> client) {
+void		THIS::release()
+{
+}
+void		THIS::accept(std::shared_ptr<neb::Network::Communicating> client)
+{
 	
 
 	// exp

@@ -20,14 +20,20 @@
 
 #include <neb/net/net/client.hh>
 
-neb::Network::Client::Client(boost::asio::io_service& io_service, ip::tcp::resolver::iterator endpoint_iterator):
+typedef neb::Network::Client THIS;
+
+THIS::Client(boost::asio::io_service& io_service, ip::tcp::resolver::iterator endpoint_iterator):
 	gal::net::communicating(io_service),
 	neb::Network::Communicating(io_service),
 	gal::net::client(io_service, endpoint_iterator)
 {
 
 }
-void		neb::Network::Client::process(std::shared_ptr<gal::net::imessage> message) {
+void		THIS::release()
+{
+}
+void		THIS::process(std::shared_ptr<gal::net::imessage> message)
+{
 
 	//assert(msg->body_length() == sizeof(neb::packet::packet));
 

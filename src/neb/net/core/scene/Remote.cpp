@@ -1,4 +1,11 @@
+#include <neb/net/core/scene/Remote.hpp>
 
+typedef neb::net::core::scene::Remote THIS;
+
+void			THIS::step(gal::etc::timestep const & ts)
+{
+	
+}
 
 /*
 #include <neb/app/Base.hh>

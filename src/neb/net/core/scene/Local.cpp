@@ -1,3 +1,14 @@
+
+#include <neb/net/core/scene/Local.hpp>
+
+typedef neb::net::core::scene::Local THIS;
+
+void			THIS::step(gal::etc::timestep const & ts)
+{
+
+}
+
+
 /*
 
 #include <Galaxy-Log/log.hpp>
@@ -33,9 +44,6 @@ void			phx::core::scene::local::release() {
 
 	neb::fnd::scene::local::release();
 	phx::core::scene::base::release();
-}
-void			phx::core::scene::local::step(gal::etc::timestep const & ts) {
-
 }
 
 */
