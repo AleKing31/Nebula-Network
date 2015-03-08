@@ -1,20 +1,9 @@
 #include <assert.h>
 
-/*#include <netinet/in.h>
-#include <sys/types.h>       // For data types
-#include <sys/socket.h>      // For socket(), connect(), send(), and recv()
-#include <netdb.h>           // For gethostbyname()
-#include <arpa/inet.h>       // For inet_addr()
-#include <unistd.h>          // For close()
-#include <netinet/in.h>      // For sockaddr_in
-*/
-//#include <math/free.hpp>
-
 #include <gal/net/message.hpp>
 
 #include <neb/fnd/core/actor/Base.hpp>
 
-//#include <neb/config.hh>
 #include <neb/fnd/app/Base.hpp>
 #include <neb/fnd/core/scene/Base.hpp>
 
