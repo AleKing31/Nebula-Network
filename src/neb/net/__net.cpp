@@ -11,14 +11,14 @@ void THIS::reset_server(ip::tcp::endpoint const & endpoint)
 	auto app = getParent();
 	
 	//NEBULA_DEBUG_0_FUNCTION;
-	server_.reset(new neb::Network::Server(app->ios_, endpoint));
+	server_.reset(new neb::Network::Server(app->_M_ios, endpoint));
 }
 void THIS::reset_client(ip::tcp::resolver::iterator endpoint_iterator)
 {
 	auto app = getParent();
 	
 	//NEBULA_DEBUG_0_FUNCTION;
-	client_.reset(new neb::Network::Client(app->ios_, endpoint_iterator));
+	client_.reset(new neb::Network::Client(app->_M_ios, endpoint_iterator));
 }
 void		THIS::sendServer(std::shared_ptr<gal::net::omessage> msg)
 {
