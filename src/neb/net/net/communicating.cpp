@@ -9,16 +9,15 @@
 
 typedef neb::Network::Communicating THIS;
 
-THIS::Communicating(
-		boost::asio::io_service& io_service,
-		ip::tcp::socket&& socket):
-	gal::net::communicating(io_service, std::move(socket))
+void			THIS::connect(
+		S_IO io_service,
+		ip::tcp::socket&& socket)
 {
+	gal::net::communicating::connect(io_service, std::move(socket));
 }
-THIS::Communicating(
-		boost::asio::io_service& io_service):
-	gal::net::communicating(io_service)
+void			THIS::connect(S_IO io_service)
 {
+	gal::net::communicating::connect(io_service);
 }
 void		THIS::process(std::shared_ptr<gal::net::imessage> buffer)
 {

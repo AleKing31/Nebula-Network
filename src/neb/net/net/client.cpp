@@ -11,12 +11,13 @@
 
 typedef neb::Network::Client THIS;
 
-THIS::Client(boost::asio::io_service& io_service, ip::tcp::resolver::iterator endpoint_iterator):
-	gal::net::communicating(io_service),
-	neb::Network::Communicating(io_service),
-	gal::net::client(io_service, endpoint_iterator)
+void			THIS::connect(
+		boost::asio::io_service& io_service,
+		ip::tcp::resolver::iterator endpoint_iterator)
 {
-
+	//gal::net::communicating(io_service),
+	//neb::Network::Communicating(io_service),
+	//gal::net::client(io_service, endpoint_iterator)
 }
 void		THIS::release()
 {

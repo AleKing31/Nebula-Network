@@ -11,9 +11,10 @@ namespace neb {
 			virtual public gal::net::communicating
 		{
 			public:
-				Communicating(boost::asio::io_service& io_service, ip::tcp::socket&& socket);
-				Communicating(boost::asio::io_service& io_service);
-				void			process(std::shared_ptr< gal::net::imessage >);
+				typedef std::shared_ptr<boost::asio::io_service> S_IO;
+				void		connect(S_IO io_service, ip::tcp::socket&& socket);
+				void		connect(S_IO io_service);
+				void		process(std::shared_ptr< gal::net::imessage >);
 		};
 	}
 }
