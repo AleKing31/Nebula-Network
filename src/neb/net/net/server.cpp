@@ -40,6 +40,7 @@ void			THIS::connect(
 }
 void		THIS::release()
 {
+	gal::net::server::release();
 }
 void		THIS::accept(std::shared_ptr<gal::net::communicating> client)
 {

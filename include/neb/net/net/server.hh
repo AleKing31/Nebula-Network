@@ -9,10 +9,13 @@
 
 namespace neb { namespace net { namespace server {
 	class Base:
+		public gal::tmp::Verbosity<neb::net::server::Base>,
 		virtual public gal::net::server,
 		virtual public neb::fnd::net::server::Base
 	{
 		public:
+			using gal::tmp::Verbosity<neb::net::server::Base>::printv;
+
 			typedef std::shared_ptr<boost::asio::io_service> S_IO;
 			/** @brief ctor
 			 *
@@ -28,7 +31,7 @@ namespace neb { namespace net { namespace server {
 			void			accept(S_COM);
 			void			write(S_MSG msg);
 		private:
-			std::vector< std::shared_ptr< neb::net::Communicating > >	clients_;
+			//std::vector< std::shared_ptr< neb::net::Communicating > >	clients_;
 
 	};
 }}}
