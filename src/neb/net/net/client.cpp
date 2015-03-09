@@ -9,8 +9,11 @@
 
 #include <neb/net/net/client.hh>
 
-typedef neb::Network::Client THIS;
+typedef neb::net::client::Base THIS;
 
+THIS::Base()
+{
+}
 void			THIS::connect(
 		boost::asio::io_service& io_service,
 		ip::tcp::resolver::iterator endpoint_iterator)
@@ -19,10 +22,37 @@ void			THIS::connect(
 	//neb::Network::Communicating(io_service),
 	//gal::net::client(io_service, endpoint_iterator)
 }
+void		THIS::init(parent_t * const & parent)
+{
+	setParent(parent);
+	
+	auto a = get_fnd_app();
+	
+	auto ios = a->_M_ios;
+	
+	io_service_ = ios;
+	
+	char buf[8];
+	sprintf(buf, "%i", portno);
+
+	ip::tcp::resolver resolver(*ios);
+	//boost::asio::ip::address::from_string(ip)
+	ip::tcp::resolver::query q(ip, buf);
+
+	ip::tcp::resolver::iterator endpoint_iterator = resolver.resolve(q);
+	
+	//gal::net::communicating(io_service),
+	//neb::Network::Communicating(io_service),
+	
+	gal::net::client::connect(ios, endpoint_iterator);
+}
+void		THIS::step(gal::etc::timestep const &)
+{
+}
 void		THIS::release()
 {
 }
-void		THIS::process(std::shared_ptr<gal::net::imessage> message)
+void		THIS::process(std::shared_ptr<gal::net::message> message)
 {
 
 	//assert(msg->body_length() == sizeof(neb::packet::packet));

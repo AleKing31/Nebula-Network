@@ -4,25 +4,37 @@
 
 //#include <neb/util/typedef.hpp>
 #include <neb/fnd/app/Base.hpp>
-#include <neb/fnd/core/actor/Base.hpp>
-#include <neb/fnd/core/scene/Base.hpp>
+//#include <neb/fnd/core/actor/Base.hpp>
+//#include <neb/fnd/core/scene/Base.hpp>
 
 #include <neb/net/net/server.hh>
 
-typedef neb::Network::Server THIS;
+typedef neb::net::server::Base THIS;
 
-THIS::Server(
-		boost::asio::io_service& io_service,
-		ip::tcp::endpoint const & endpoint):
-	gal::net::server<neb::Network::Communicating>(io_service, endpoint)
+void			THIS::connect(
+		S_IO io_service,
+		ip::tcp::endpoint const & endpoint)
 {
+	gal::net::server::connect(io_service, endpoint);
 }
 void		THIS::release()
 {
 }
-void		THIS::accept(std::shared_ptr<neb::Network::Communicating> client)
+void		THIS::accept(std::shared_ptr<gal::net::communicating> client)
 {
-	
+	typedef neb::net::Communicating C;
+
+	C* cp = new C(std::move(*client));
+
+	std::shared_ptr<C> c(cp);
+
+	auto p = getParent();
+
+	p->insert(c);
+
+
+	// do some other stuff??
+
 
 	// exp
 	//std::shared_ptr<neb::fnd::actor::Control::RigidBody::raw> control_raw(new neb::control::rigid_body::raw);
@@ -60,8 +72,10 @@ void		THIS::accept(std::shared_ptr<neb::Network::Communicating> client)
 	// exp
 	 */
 }
-void		neb::Network::Server::write(std::shared_ptr< gal::net::omessage > omessage) {
+void			THIS::write(std::shared_ptr< gal::net::message > omessage)
+{
 	/** @todo impl */
+	abort();
 }
 
 

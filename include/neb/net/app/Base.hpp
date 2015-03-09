@@ -24,16 +24,18 @@ namespace neb { namespace net { namespace app {
 		virtual public neb::fnd::plug::net::app::Base
 	{
 		public:
-			typedef std::shared_ptr<neb::Network::Server> SS;
-			typedef std::shared_ptr<neb::Network::Client> SC;
+			typedef std::shared_ptr<neb::net::server::Base> SS;
+			typedef std::shared_ptr<neb::net::client::Base> SC;
+			typedef std::shared_ptr<gal::net::message>	S_MSG;
+			virtual void		init(parent_t * const & parent);
+			virtual void		release();
+			virtual void		step(gal::etc::timestep const & ts);
 			void			reset_server(ip::tcp::endpoint const & endpoint);
 			void			reset_client(ip::tcp::resolver::iterator endpoint_iterator);
-			void			sendServer(std::shared_ptr<gal::net::omessage>);
+			void			sendServer(S_MSG);
 			void			sendServer(std::shared_ptr<neb::fnd::net::msg::Base> message);
-			void			sendClient(std::shared_ptr<gal::net::omessage>);
+			void			sendClient(S_MSG);
 			void			sendClient(std::shared_ptr<neb::fnd::net::msg::Base> message);
-			SS			server_;
-			SC			client_;
 	};
 }}}
 
