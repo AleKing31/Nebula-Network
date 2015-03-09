@@ -11,6 +11,27 @@
 
 typedef neb::net::server::Base THIS;
 
+THIS::Base()
+{
+}
+void			THIS::init(parent_t * const & parent)
+{
+	printv_func(DEBUG);
+	
+	setParent(parent);
+	
+	auto app = get_fnd_app();
+
+	auto ios = app->_M_ios;
+	assert(ios);
+
+	ip::tcp::endpoint ep(ip::tcp::v4(), portno);
+	
+	connect(ios, ep);
+}
+void			THIS::step(gal::etc::timestep const & ts)
+{
+}
 void			THIS::connect(
 		S_IO io_service,
 		ip::tcp::endpoint const & endpoint)
@@ -28,9 +49,9 @@ void		THIS::accept(std::shared_ptr<gal::net::communicating> client)
 
 	std::shared_ptr<C> c(cp);
 
-	auto p = getParent();
+	//auto p = getParent();
 
-	p->insert(c);
+	insert(c);
 
 
 	// do some other stuff??

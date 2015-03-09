@@ -1,8 +1,8 @@
-#include <neb/fnd/plug/net/server/Base.hpp>
+#include <neb/fnd/net/server/Base.hpp>
 
 #include <neb/net/net/server.hh>
 
-namespace NS0 = neb::fnd::plug::net::server;
+namespace NS0 = neb::fnd::net::server;
 namespace NS1 = neb::net::server;
 
 typedef NS0::Base T0;

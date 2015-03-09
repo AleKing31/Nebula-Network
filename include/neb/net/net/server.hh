@@ -3,14 +3,14 @@
 
 #include <gal/net/server.hpp>
 
-#include <neb/fnd/plug/net/server/Base.hpp>
+#include <neb/fnd/net/server/Base.hpp>
 
 #include <neb/net/net/communicating.hh>
 
 namespace neb { namespace net { namespace server {
 	class Base:
-		virtual public neb::fnd::plug::net::server::Base,
-		public gal::net::server
+		virtual public gal::net::server,
+		virtual public neb::fnd::net::server::Base
 	{
 		public:
 			typedef std::shared_ptr<boost::asio::io_service> S_IO;
