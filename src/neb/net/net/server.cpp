@@ -17,11 +17,16 @@ THIS::Base()
 void			THIS::init(parent_t * const & parent)
 {
 	printv_func(DEBUG);
-	
+
 	setParent(parent);
 	
 	auto app = get_fnd_app();
-
+	
+	if(acceptor_) {
+		printv(DEBUG, "already initialized\n");
+		return;
+	}
+	
 	auto ios = app->_M_ios;
 	assert(ios);
 
@@ -31,19 +36,27 @@ void			THIS::init(parent_t * const & parent)
 }
 void			THIS::step(gal::etc::timestep const & ts)
 {
+	printv_func(DEBUG);
+
 }
 void			THIS::connect(
 		S_IO io_service,
 		ip::tcp::endpoint const & endpoint)
 {
+	printv_func(DEBUG);
+
 	gal::net::server::connect(io_service, endpoint);
 }
-void		THIS::release()
+void			THIS::release()
 {
+	printv_func(DEBUG);
+
 	gal::net::server::release();
 }
-void		THIS::accept(std::shared_ptr<gal::net::communicating> client)
+void			THIS::accept(std::shared_ptr<gal::net::communicating> client)
 {
+	printv_func(DEBUG);
+
 	typedef neb::net::Communicating C;
 
 	C* cp = new C(std::move(*client));
@@ -96,6 +109,8 @@ void		THIS::accept(std::shared_ptr<gal::net::communicating> client)
 }
 void			THIS::write(std::shared_ptr< gal::net::message > omessage)
 {
+	printv_func(DEBUG);
+
 	/** @todo impl */
 	abort();
 }

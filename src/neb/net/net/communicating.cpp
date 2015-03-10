@@ -12,15 +12,21 @@ typedef neb::net::Communicating THIS;
 
 THIS::Communicating()
 {
+	printv_func(DEBUG);
+
 	//abort();
 }
 THIS::Communicating(gal::net::communicating&& c):
 	gal::net::communicating(std::move(c))
 {
+	printv_func(DEBUG);
+
 
 }
 void			THIS::init(parent_t * const & parent)
 {
+	printv_func(DEBUG);
+
 	setParent(parent);
 	
 	
@@ -29,15 +35,21 @@ void			THIS::connect(
 		S_IO io_service,
 		S_SOC socket)
 {
+	printv_func(DEBUG);
+
 	gal::net::communicating::connect(io_service, std::move(socket));
 }
 void			THIS::connect(S_IO io_service)
 {
+	printv_func(DEBUG);
+
 	gal::net::communicating::connect(io_service);
 }
 void			THIS::process(S_MSG buffer)
 {
 	//if(DEBUG_NEB) BOOST_LOG_CHANNEL_SEV(lg, "neb::Network", debug) << __PRETTY_FUNCTION__;
+	printv_func(DEBUG);
+
 	
 	typedef gal::stl::wrapper<neb::fnd::net::msg::Base> W;
 	
