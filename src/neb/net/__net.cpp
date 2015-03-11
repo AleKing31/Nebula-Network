@@ -1,5 +1,5 @@
 #include <neb/fnd/app/Base.hpp>
-#include <neb/fnd/net/message/Base.hpp>
+#include <neb/fnd/net/msg/Base.hpp>
 
 //#include <neb/debug.hh>
 //#include <neb/util/wrapper.hpp>
@@ -51,12 +51,12 @@ void		THIS::sendClient(S_MSG msg)
 	*/
 }
 typedef neb::fnd::net::msg::Base T;
-void		THIS::sendClient(std::shared_ptr<neb::fnd::net::msg::Base> message)
+void		THIS::sendClient(std::shared_ptr<neb::fnd::net::msg::Base> m)
 {
-	assert(message);
+	assert(m);
 	
 	/** @todo wtf */
-	gal::stl::wrapper<T> wrapper(message);
+	gal::stl::wrapper<T> wrapper(std::move(m));
 
 	auto buffer = S_MSG(new gal::net::message);
 	buffer->init_output();
@@ -66,12 +66,12 @@ void		THIS::sendClient(std::shared_ptr<neb::fnd::net::msg::Base> message)
 
 	sendClient(buffer);
 }
-void		THIS::sendServer(std::shared_ptr<neb::fnd::net::msg::Base> message)
+void		THIS::sendServer(std::shared_ptr<neb::fnd::net::msg::Base> m)
 {
-	assert(message);
+	assert(m);
 
 	/** @todo wtf */
-	gal::stl::wrapper<T> wrapper(message);
+	gal::stl::wrapper<T> wrapper(std::move(m));
 	
 	auto buffer = S_MSG(new gal::net::message);
 	buffer->init_output();

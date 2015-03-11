@@ -28,7 +28,7 @@ namespace neb { namespace net { namespace server {
 					S_IO io_service,
 					ip::tcp::endpoint const & endpoint);
 			virtual void		release();
-			void			accept(S_COM);
+			virtual void		accept(S_COM &&);
 			void			write(S_MSG msg);
 		private:
 			//std::vector< std::shared_ptr< neb::net::Communicating > >	clients_;

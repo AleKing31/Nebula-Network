@@ -12,7 +12,7 @@ namespace neb { namespace net { namespace client {
 	class Base:
 		virtual public gal::net::client,
 		virtual public neb::fnd::net::client::Base,
-		virtual public neb::net::Communicating
+		virtual public neb::net::comm::Base
 	{
 		public:
 			using neb::fnd::net::client::Base::parent_t;
@@ -28,6 +28,7 @@ namespace neb { namespace net { namespace client {
 					ip::tcp::resolver::iterator endpoint_iterator);
 			void			process(S_MSG msg);
 			virtual void		release();
+			virtual void		send(std::shared_ptr<neb::fnd::net::msg::Base> m);
 	};
 }}}
 

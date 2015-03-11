@@ -6,6 +6,7 @@
 
 #include <neb/fnd/app/Base.hpp>
 #include <neb/fnd/core/scene/Base.hpp>
+#include <neb/fnd/net/msg/Base.hpp>
 
 #include <neb/net/net/client.hh>
 
@@ -54,6 +55,7 @@ void		THIS::release()
 }
 void		THIS::process(std::shared_ptr<gal::net::message> message)
 {
+	abort();
 
 	//assert(msg->body_length() == sizeof(neb::packet::packet));
 
@@ -187,7 +189,24 @@ void		THIS::process(std::shared_ptr<gal::net::message> message)
 	}
 */
 }
+void			THIS::send(
+		std::shared_ptr<neb::fnd::net::msg::Base> m)
+{
+	assert(m);
 
+	typedef neb::fnd::net::msg::Base T;
+	
+	/** @todo wtf */
+	gal::stl::wrapper<T> wrapper(std::move(m));
+
+	auto buffer = S_MSG(new gal::net::message);
+	buffer->init_output();
+
+	/** @todo boost serial warning */
+	*buffer->get_oar() << wrapper;
+
+	write(buffer);
+}
 
 
 

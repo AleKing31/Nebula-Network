@@ -13,13 +13,16 @@ typedef neb::net::server::Base THIS;
 
 THIS::Base()
 {
+
 }
 void			THIS::init(parent_t * const & parent)
 {
 	printv_func(DEBUG);
 
 	setParent(parent);
-	
+
+	neb::fnd::net::server::Base::init(parent);
+
 	auto app = get_fnd_app();
 	
 	if(acceptor_) {
@@ -52,22 +55,33 @@ void			THIS::release()
 	printv_func(DEBUG);
 
 	gal::net::server::release();
+	neb::fnd::net::server::Base::release();
 }
-void			THIS::accept(std::shared_ptr<gal::net::communicating> client)
+void			THIS::accept(
+		std::shared_ptr<gal::net::communicating> && client)
 {
 	printv_func(DEBUG);
-
-	typedef neb::net::Communicating C;
-
-	C* cp = new C(std::move(*client));
-
-	std::shared_ptr<C> c(cp);
-
+	
+	typedef neb::net::comm::Base C;
+	
+	// get proper communicating type
+	auto comm = std::dynamic_pointer_cast<C>(create_communicating());
+	
+	// copy data to new object
+	*comm = std::move(*client);
+	
+	//std::shared_ptr<C> c(cp);
+	
 	//auto p = getParent();
 
-	insert(c);
-
-
+	gal::weak_ptr<C> w(comm);
+	
+	neb::fnd::net::comm::util::Parent::S s(std::move(comm));
+	
+	insert(std::move(s));
+	
+	w->do_read_header();
+	
 	// do some other stuff??
 
 

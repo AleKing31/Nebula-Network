@@ -10,7 +10,7 @@
 
 #include <gal/net/decl.hpp>
 
-#include <neb/fnd/net/message/util/decl.hpp>
+#include <neb/fnd/net/msg/util/decl.hpp>
 
 #include <neb/fnd/plug/net/app/Base.hpp>
 
